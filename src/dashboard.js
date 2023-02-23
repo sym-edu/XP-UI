@@ -1,26 +1,26 @@
 import React from "react";
 import "./dash.css";
+import Qmark from './qmark.jpeg';
+import Logo from './symlogo.jpeg';
 
 function Dashboard () {
     return(
-    <div>
-        <div className='container'>
+    <div class='container'>
+        <div class='nav'>
         <div class="logo">
-            <img src="logo.png" alt="Logo" />
+            <img src={Logo} alt="Logo" />
             <span>Hello,Learner!</span>
         </div>
         
-        <ul>
-            <li><a href="#">My Dashboard</a></li>
-            <li><a href="#">Profile</a></li>
-            <button>
-                <span>Need Help</span>
-                <img src="help.png" alt="Help" />
+        <ul class='ulist'>
+            <li class='litems'><a href="#">Profile</a></li>
+            <li class='litems'><a href="#">My Dashboard</a></li>
+            <button class='help-button'>
+                <span class='help-button-text'>Need Help</span>
+                <img src={Qmark} alt="Help" class='qimg'/>
             </button>
         </ul>
      </div>
-
-<div class="container">
 <div class="sidebar">
     <span>
         Curriculum
@@ -30,7 +30,7 @@ function Dashboard () {
       Button 1
     </div>
     <div class="progress-bar">
-        <div class="progress-fill" style ="  width: 60%; background-color: rgb(0, 0, 0);"></div>
+        <div class="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
     </div>
   </button>
   <button>
@@ -74,7 +74,10 @@ function Dashboard () {
     </div>
   </button>
 </div>
-<div class="content">
+</div>
+    )
+}
+{/*<div class="content">
     <video id="my-video" class="custom-video" src="path/to/video.mp4"></video>
     <div class="custom-controls">
       <button id="play-pause-btn" class="control-btn play-btn"></button>
@@ -85,8 +88,9 @@ function Dashboard () {
         <span id="current-time"></span> / <span id="duration"></span>
       </div>
     </div>
-  </div>
-</div>
-</div>
-    )
-}
+  </div>*/}
+
+    
+
+
+export default Dashboard;

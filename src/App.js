@@ -1,16 +1,11 @@
 import React from 'react';
-import CoursesOverview from "./coursesOverview";
 import Dashboard from './dashboard';
+import './App.css';
 
 function App () {
     return(
         <div className="root">
-            <div>
-        <CoursesOverview />
-        </div>
-        <div>
             <Dashboard />
-        </div>
         </div>
     )
 }
