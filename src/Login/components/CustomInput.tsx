@@ -1,3 +1,4 @@
+import React from 'react';
 import { VisibilityOff } from "@mui/icons-material";
 import {
   Box,
@@ -7,7 +8,8 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import { colors } from "../theme";
+import { colors } from "./theme";
+
 
 const CustomInput: React.FC<{
   isIconActive: boolean;

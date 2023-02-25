@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-
+import React from 'react';
 const TitleBox: React.FC = () => {
   return (
     <Grid xs={0} sm={0} md={6} lg={6} xl={6} minHeight={550}>
