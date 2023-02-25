@@ -1,10 +1,8 @@
 import React from 'react';
 import Dashboard from './dashboard';
-import './App.css';
-
 function App () {
     return(
-        <div className="root">
+        <div className='root'>
             <Dashboard />
         </div>
     )
