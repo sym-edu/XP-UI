@@ -1,11 +1,13 @@
 import React from 'react';
-import Dashboard from './dashboard';
+import Curriculum from './curriculum.js';
+import LandingPage from './landingpage.jsx';
+
 function App () {
     return(
         <div className='root'>
-            <Dashboard />
+            <LandingPage/>
         </div>
-    )
+    )   
 }
 
 export default App;

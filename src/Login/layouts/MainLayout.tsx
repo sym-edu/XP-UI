@@ -1,5 +1,6 @@
+import React from 'react';
 import { Box, colors, ThemeProvider } from "@mui/material";
-import { theme } from "../theme";
+import { theme } from "../components/theme";
 
 const bgImage = require("../assets/bg2.jpg");
 
