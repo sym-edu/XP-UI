@@ -1,89 +1,123 @@
 import React from "react";
 import "./curriculum.css";
-import Qmark from './img-imports/qmark.jpeg';
+import {AiOutlineQuestionCircle} from 'react-icons/ai';
 import Logo from './img-imports/symlogo.jpeg';
+import { FaRegPlayCircle } from "react-icons/fa";
+import { FaPenAlt} from 'react-icons/fa';
 
-export function Curriculum (){
+export default function Curriculum (){
   return(
     <div className='container'>
         <div className='nav'>
-        <div className="logo">
-            <img src={Logo} alt="Logo" />
-            <span>Hello,Learner!</span>
+        <div className='nav-left'>
+                  <img src={Logo} alt='sym-logo' className='nav-logo'/>
+        <h3 className='nav-logo-h3'>Hello,Learner!</h3>
         </div>
-        <ul className='ulist'>
-            <li className='litems'><a href="#">Profile</a></li>
-            <li className='litems'><a href="#">My Dashboard</a></li>
+        <ul className='nav-center'>
+          <li className='nav-center-1'>
+             <a href="#" >
+              <span>Profile</span>
+              </a>
+          </li>
+          <li className='nav-center-2'>
+            <a href='#'>
+              <span>My Dashboard</span>
+            </a>
+            </li>
             <button className='help-button'>
                 <span className='help-button-text'>Need Help</span>
-                <img src={Qmark} alt="Help" className='qimg'/>
+                <AiOutlineQuestionCircle/>
             </button>
         </ul>
-     </div>
+        </div>
+        <div className='cur-below-nav'>
 <div className="sidebar">
     <span>
         Curriculum
     </span>
-  <button>
+    <a href="#">
+  <button className='sidebar-btn-1'>
     <div className="button-text">
-      Button 1
+      <pre>1. Intro to Finance</pre>
+      <div className='sidebar-btn-img'>
+      <FaRegPlayCircle/>
+      </div>
     </div>
     <div className="progress-bar">
         <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
     </div>
   </button>
+  </a>
+  <a href="#">
   <button>
     <div className="button-text">
-      Button 2
+      <pre>2. Stock and Investing</pre>
+      <div className='sidebar-btn-img'>
+      <FaRegPlayCircle/>
+      </div>
     </div>
     <div className="progress-bar">
-        <div className="progress-fill"></div>
+    <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
     </div>
   </button>
+  </a>
+  <a href="#">
   <button>
     <div className="button-text">
-      Button 3
+      3. Quiz 1
+      <div className='sidebar-btn-img'>
+      <FaPenAlt/>
+      </div>
     </div>
     <div className="progress-bar">
-        <div className="progress-fill"></div>
+    <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
     </div>
   </button>
+  </a>
+  <a href="#">
   <button>
     <div className="button-text">
-      Button 4
+      4. Financing
+      <div className='sidebar-btn-img'>
+      <FaRegPlayCircle/>
+    </div>
     </div>
     <div className="progress-bar">
-        <div className="progress-fill"></div>
+    <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
     </div>
   </button>
+  </a>
+  <a href="#">
   <button>
     <div className="button-text">
-      Button 5
+      5. Banking
+      <div className='sidebar-btn-img'>
+      <FaRegPlayCircle/>
+    </div>
     </div>
     <div className="progress-bar">
-        <div className="progress-fill"></div>
+    <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
     </div>
   </button>
+  </a>
+  <a href="#">
   <button>
     <div className="button-text">
-      Button 6
+      6. Quiz 2
+      <div className='sidebar-btn-img'>
+      <FaPenAlt/>
+      </div>
     </div>
     <div className="progress-bar">
-        <div className="progress-fill"></div>
+    <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
     </div>
   </button>
+  </a>
 </div>
 <div className="content">
-    <video id="my-video" className="custom-video" src="path/to/video.mp4"></video>
-    <div className="custom-controls">
-      <button id="play-pause-btn" className="control-btn play-btn"></button>
-      <div className="progress-bar-vid">
-        <div className="progress"></div>
-      </div>
-      <div className="time">
-        <span id="current-time"></span> / <span id="duration"></span>
-      </div>
-    </div>
+    <video id="my-video" className="custom-video" controls/>
+      <source src="./img-imports/my-video.mp4" type="video/mp4"/>
+  </div>
   </div>
 </div>
 

@@ -17,7 +17,8 @@ import {
   Legend
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { borderColor } from '@mui/system';
+import { Link } from "react-router-dom";
+
 
 
 ChartJS.register(
@@ -30,14 +31,14 @@ ChartJS.register(
   Legend
 );
 
-function handleHover() {
+export function handleHover() {
   const progressBar = document.getElementById('ProgressBar');
   const value = progressBar.value;
   progressBar.title = `${value}%`;
 }
 
 
-export function LandingPage() {
+export default function LandingPage() {
 
   const options = {
     responsive: true,
@@ -155,9 +156,11 @@ export function LandingPage() {
                 <div className="content-button">
         <a href="/curriculum">
            <button className="content-btn" id="btn">
+            <Link to="/curriculum">
             <span>Continue Your Learning</span> 
             <span>STOCKS AND INVESTING</span> 
             <FaRegPlayCircle size={32}/>
+            </Link>
             </button>
         </a>
       </div>
