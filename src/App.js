@@ -4,6 +4,7 @@ import  LandingPage from './landingpage.jsx';
 import { BrowserRouter , Route  } from "react-router-dom";
 import { Login } from './Login/Login.js';
 import Register from './Login/Register.js';
+import Assignments from './uploading/uploader.js';
 
 function App () {
     return(
@@ -14,6 +15,7 @@ function App () {
              <Route path='/register' component={ Register } /> 
              <Route path='/' component={ LandingPage } />
              <Route path='/curriculum' component={ Curriculum } />
+             <Route path='/uploader' component={ Assignments } />
              </Suspense>
              </BrowserRouter>
         </div>
