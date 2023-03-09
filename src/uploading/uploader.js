@@ -1,46 +1,37 @@
-import { useState } from 'react'
-import './uploader.css'
+import React, { useState } from 'react';
+import './Uploader.css';
+
 function Uploader() {
+  const [file, setFile] = useState(null);
 
-  const [image, setImage] = useState(null)
-  const [fileName, setFileName] = useState("No selected file")
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Do something with the uploaded file
+  };
+
   return (
-    <main>
-      <form
-      onClick={() => document.querySelector(".input-field").click()}
-      >
-        <input type="file" accept='image/*' className='input-field' hidden 
-        onChange={({ target: {files}}) => {
-          files[0] && setFileName(files[0].name)
-          if(files){
-            setImage(URL.createObjectURL(files[0]))
-          }
-        }}
-         />
-
-        {image ?
-        <img src={image} width={150} height={150} alt={fileName} />
-        : 
-        <>
-        <p>Browse Files to upload</p>
-        </>
-      }
-
+    <div className="assignment-upload-container">
+      <h2>Upload Your Assignment</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="file-upload" className="file-upload-label">
+          Choose a file
+        </label>
+        <input
+          id="file-upload"
+          type="file"
+          onChange={handleFileChange}
+          className="file-upload-input"
+        />
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
       </form>
-
-      <section className='uploaded-row'>
-        <span className='upload-content'>
-          {fileName} - 
-        
-          onClick={() => {
-            setFileName("No selected File")
-            setImage(null)
-          }}
-        </span>
-      </section>
-
-    </main>
-  )
+    </div>
+  );
 }
 
-export default Uploader
+export default Uploader;
