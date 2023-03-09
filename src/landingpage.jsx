@@ -5,7 +5,8 @@ import Logo from './img-imports/symlogo.jpeg';
 import { FaRegPlayCircle } from 'react-icons/fa';
 import {AiOutlineQuestionCircle} from 'react-icons/ai';
 import { SlNote } from 'react-icons/sl';
-import { FaPenAlt} from 'react-icons/fa'
+import { FaPenAlt} from 'react-icons/fa';
+import $ from 'jquery';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -35,6 +36,16 @@ export function handleHover() {
   const progressBar = document.getElementById('ProgressBar');
   const value = progressBar.value;
   progressBar.title = `${value}%`;
+}
+
+export function hide () {
+
+  $(document).ready(function() {
+    $('#btn').on('click', function() {
+      $('#landingpage').hide();
+      $('#curriculum').show();
+      })
+    });
 }
 
 
@@ -91,7 +102,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className='maincontainer'>
+    <div id='landingpage' className='maincontainer'>
       <div className='nav'>
         <div className='nav-left'>
                   <img src={Logo} alt='sym-logo' className='nav-logo'/>
@@ -154,15 +165,15 @@ export default function LandingPage() {
         </div>
         <div className="content-area">
                 <div className="content-button">
-        <a href="/curriculum">
+        <a>
+        <Link to="/curriculum">
            <button className="content-btn" id="btn">
-            <Link to="/curriculum">
             <span>Continue Your Learning</span> 
             <span>STOCKS AND INVESTING</span> 
             <FaRegPlayCircle size={32}/>
-            </Link>
             </button>
-        </a>
+            </Link>
+            </a>
       </div>
       <div className="below-content-button"> 
          <div className="stats">

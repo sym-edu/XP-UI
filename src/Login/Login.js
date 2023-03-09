@@ -2,6 +2,7 @@ import { useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from "./context/AuthProvider";
 import { Link } from 'react-router-dom';
 import axios from './api/axios';
+import './styles.css';
 const LOGIN_URL = '/auth';
 
 export const Login = () => {
@@ -62,7 +63,7 @@ export const Login = () => {
                     <h1>You are logged in!</h1>
                     <br />
                     <p>
-                        <a href="#">Go to Home</a>
+                        <a href="#"><Link to='/landingpage'>Go to Home</Link></a>
                     </p>
                 </section>
             ) : (
@@ -89,7 +90,7 @@ export const Login = () => {
                             value={pwd}
                             required
                         />
-                        <button><Link to='/landingpage'>Sign In</Link></button>
+                        <button>Sign In</button>
                     </form>
                     <p>
                         Need an Account?<br />
