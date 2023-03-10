@@ -20,7 +20,7 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { Link } from "react-router-dom";
-import { SiChatbot} from "react-icons/si";
+import { TbRobot} from "react-icons/tb";
 import { Circle } from '@mui/icons-material';
 
 
@@ -111,9 +111,11 @@ export default function LandingPage() {
               <span>My Dashboard</span>
             </a>
             </li>
+            <li>
             <Link to ='/chatbot'>
-            <SiChatbot className='sichatbot' />
+            <TbRobot className='sichatbot' />
             </Link> 
+            </li>
             <button className='help-button'>
                 <span className='help-button-text'>Need Help</span>
                 <AiOutlineQuestionCircle style= {{ color:'black'}} />
