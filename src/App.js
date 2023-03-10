@@ -5,7 +5,6 @@ import { BrowserRouter as Router , Switch , Route } from "react-router-dom";
 import { Login } from './Login/Login.js';
 import Register from './Login/Register.js';
 import Assignments from './uploading/uploader.js';
-
 import Chatbot from './chatbot/chatbot.js';
 
 function App() {
@@ -29,7 +28,10 @@ function App() {
             <Route exact path='/chatbot'>
                 <Chatbot />
             </Route>
-            <Route component = { Login } />
+            <Route exact path='/Assignments'>
+                <Assignments />
+            </Route>
+            <Route component = { LandingPage } />
           </Switch>
       </Router>
     </div>

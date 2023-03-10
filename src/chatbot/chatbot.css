@@ -89,7 +89,7 @@
     border: 1px solid transparent;
     border-radius: 3px;
     outline: none;
-    padding-right: 70px;
+    padding-right: 7px;
     font-family: 'Cursive';
     transition: 0.3s all ease;
 }
@@ -117,7 +117,7 @@
 
 .wrapper .typing-area .input-field button:hover {
     background: #efc83a;
-    color: rgb(54, 54, 54);
+    color: rgb(8, 8, 8);
 }
 
 .wrapper .typing-area .input-field input:valid ~ button {
