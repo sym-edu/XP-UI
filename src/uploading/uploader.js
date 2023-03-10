@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Uploader.css';
+import './uploader.css';
 
 function Uploader() {
   const [file, setFile] = useState(null);
