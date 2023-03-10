@@ -5,7 +5,6 @@ import { BrowserRouter as Router , Switch , Route } from "react-router-dom";
 import { Login } from './Login/Login.js';
 import Register from './Login/Register.js';
 import Assignments from './uploading/uploader.js';
-
 import Chatbot from './chatbot/chatbot.js';
 
 function App() {
