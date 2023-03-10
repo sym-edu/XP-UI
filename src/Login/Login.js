@@ -67,6 +67,7 @@ export const Login = () => {
                     </p>
                 </section>
             ) : (
+                <div className="container">
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Sign In</h1>
@@ -100,6 +101,7 @@ export const Login = () => {
                         </span>
                     </p>
                 </section>
+                </div>
             )}
         </>
     )

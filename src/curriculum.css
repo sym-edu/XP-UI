@@ -4,8 +4,9 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
-.container {
-  height: 100%;
+.curriculum-cotainer{
+display:block;
+height:100vh;
 }
 
 .sidebar {

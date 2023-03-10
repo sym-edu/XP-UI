@@ -6,15 +6,24 @@
     box-sizing: border-box;
 }
 
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+
 section {
     width: 100%;
-    max-width: 420px;
+    max-width: 440px;
     min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 1rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color:grey;
+    border: 1px solid black;
+    box-shadow: inset;
 }
 
 form {

@@ -15,11 +15,13 @@ import {
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { Link } from "react-router-dom";
-
+import { SiChatbot} from "react-icons/si";
+import { Circle } from '@mui/icons-material';
 
 
 ChartJS.register(
@@ -29,7 +31,8 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  PointElement,
 );
 
 export function handleHover() {
@@ -37,17 +40,6 @@ export function handleHover() {
   const value = progressBar.value;
   progressBar.title = `${value}%`;
 }
-
-export function hide () {
-
-  $(document).ready(function() {
-    $('#btn').on('click', function() {
-      $('#landingpage').hide();
-      $('#curriculum').show();
-      })
-    });
-}
-
 
 export default function LandingPage() {
 
@@ -62,7 +54,7 @@ export default function LandingPage() {
       legend: {
         position: "top" ,
         labels:{
-           pointStyle: "circle"
+           PointElement: "circle"
       }
     },
       title: {
@@ -119,9 +111,12 @@ export default function LandingPage() {
               <span>My Dashboard</span>
             </a>
             </li>
+            <Link to ='/chatbot'>
+            <SiChatbot className='sichatbot' />
+            </Link> 
             <button className='help-button'>
                 <span className='help-button-text'>Need Help</span>
-                <AiOutlineQuestionCircle/>
+                <AiOutlineQuestionCircle style= {{ color:'black'}} />
             </button>
         </ul>
         </div>

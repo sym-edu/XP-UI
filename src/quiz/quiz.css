@@ -1,23 +1,15 @@
-body {
+/* body {
     margin: 0;
     font-family: "Cursive";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
+  } */
   * {
     font-family: "Cursive";
     color: black;
   }
   
-  body {
-    background-color: #FFA500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  .app {
+  /* .app {
     background-color: #f2cb06;
     width: 600px;
     min-height: 300px;
@@ -27,7 +19,7 @@ body {
     box-shadow: 10px 10px 42px 5px rgba(235, 76, 3, 0.75);
     display: flex;
     justify-content: space-evenly;
-  }
+  } */
   
   .score-section {
     display: flex;

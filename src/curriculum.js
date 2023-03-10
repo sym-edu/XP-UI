@@ -7,7 +7,7 @@ import { FaPenAlt} from 'react-icons/fa';
 
 export default function Curriculum (){
   return(
-    <div id=' curriculum-page ' className='container'>
+    <div className='curriculum-container'>
         <div className='nav'>
         <div className='nav-left'>
                   <img src={Logo} alt='sym-logo' className='nav-logo'/>
