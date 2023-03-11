@@ -99,8 +99,11 @@
 }
 
 .wrapper .typing-area .input-field button {
-    position: absolute;
+    /* position: absolute;
+     */
+    margin-left: 50%;
     top: 50%;
+    z-index: 5;
     right: 10px;
     transform: translateY(-50%);
     background: transparent;
