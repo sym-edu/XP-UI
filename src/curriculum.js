@@ -4,7 +4,8 @@ import {AiOutlineQuestionCircle} from 'react-icons/ai';
 import Logo from './img-imports/symlogo.jpeg';
 import { FaRegPlayCircle } from "react-icons/fa";
 import { FaPenAlt} from 'react-icons/fa';
-
+import { Link } from "react-router-dom";
+import { TbRobot } from "react-icons/tb";
 export default function Curriculum (){
   return(
     <div className='curriculum-container'>
@@ -23,6 +24,11 @@ export default function Curriculum (){
             <a href='#'>
               <span>My Dashboard</span>
             </a>
+            </li>
+            <li>
+              <Link to='/chatbot' className='chatbot-link'>
+              <TbRobot />
+              </Link>
             </li>
             <button className='help-button'>
                 <span className='help-button-text'>Need Help</span>

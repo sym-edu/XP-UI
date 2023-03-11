@@ -25,13 +25,10 @@ function App() {
             <Route exact path='/curriculum'>
                 <Curriculum />
             </Route>
-            <Route exact path='/chatbot'>
+            <Route path='/chatbot'>
                 <Chatbot />
             </Route>
-            <Route exact path='/Assignments'>
-                <Assignments />
-            </Route>
-            <Route component = { LandingPage } />
+            <Route component = { LandingPage} />
           </Switch>
       </Router>
     </div>

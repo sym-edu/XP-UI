@@ -4,12 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from './api/axios';
 import { Link } from 'react-router-dom';
 import './styles.css';
+import Image from '../img-imports/leftimg.jpg';
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = '/register';
 
 const Register = () => {
+
+const [show, setShow] = useState(true);
+
+  const handleShow = () => {
+    setShow(false);
+  };
+
     const userRef = useRef();
     const errRef = useRef();
 
@@ -92,6 +100,11 @@ const Register = () => {
                     </p>
                 </section>
             ) : (
+              <div className={show ? 'fade-in' : 'fade-out'}>
+                <div className='register-container'>
+                <div className='left-img'>
+                  <img src={Image}/>
+                </div>
                 <div className="container">
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
@@ -174,11 +187,13 @@ const Register = () => {
                         Already registered?<br />
                         <span className="line">
                             {/*put router link here*/}
-                            <a href="#"><Link to='/Login'>Sign In</Link></a>
+                            <a href="#"><Link to='/Login' onClick={handleShow}>Sign In</Link></a>
                         </span>
                     </p>
                 </section>
                 </div>
+              </div>
+              </div>
             )}
         </>
     )

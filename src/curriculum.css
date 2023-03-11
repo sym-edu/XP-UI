@@ -290,3 +290,7 @@ li a:hover {
     font-size: 12px;
   }
   
+  a.chatbot-link {
+    color:black;
+  }
+
