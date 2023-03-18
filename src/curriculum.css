@@ -36,6 +36,10 @@ height:100vh;
   width:100%;
 }
 
+.sidebar h2{
+  margin-left: 90px;
+}
+
 .sidebar-btn {
   margin-bottom: 20px;
 }
@@ -60,40 +64,32 @@ overflow: visible;
   overflow: hidden;
 }
 
-.sidebar span {
-  align-self: center;
-  font-size: 220%;
-  font-weight: bold;
-  margin-bottom: 40px;
-  margin-right: 15%;
+.sidebar span,pre {
+font-size:1.6rem;
 }
 
-button {
+.button {
   display: flex;
   flex-direction: column; 
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
-  height: 90px;
-  padding: 0 20px;
-  font-size: 170%;
-  font-weight: bold;
+  width: 330px;
+  height: 70px;
   text-align: left;
   color: black;
   background-color: #ebd461;
   border: none;
   border-radius: 10px;
   margin-bottom: 25px;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+.sdiebar button{
+  background-color: #ebd461;
+}
+
+.sidebar button:hover {
   cursor: pointer;
-  background-color: #ebd4618c;
 }
-
-
 
 .progress-bar {
   width: 100%;
@@ -103,9 +99,7 @@ button:hover {
   margin-top: 10px;
 }
 .progress-fill {
-
   height: 100%;
-  
   border-radius: 10px;
   transition: width 0.3s ease; /* add transition to animate progress bar */
 }
@@ -115,22 +109,18 @@ button:hover {
 }
 
 .nav {
-    /* margin-right: 220px; */
     margin-left: 5px;
     width: 95%;
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     background-color: transparent;
-    /* padding: 20px; */
-    /* margin: 10% 10% 0% 10%;   */
     margin-top: 5px;
-    /* height: 0%; */
     border-radius: 10px 10px 10px 10px;
     border: 2px solid rgba(0, 0, 0, 0.357);
     z-index: 20;
-    height:10%;
+    height:120px;
   }
+
   .ullist{
   display:flex;
   align-items:center;
@@ -139,8 +129,7 @@ button:hover {
   }
 
 li{
-    /* margin-right: 0; */
-    /* align-items: top; */
+    
     display: flex;
     align-self: right;
     margin-left:50px;
@@ -148,18 +137,16 @@ li{
 }
 
 li a{
-    /* margin-top: 30px; */
+
     text-decoration: none;
     font-weight: normal;
     font-size: 190%;
     color: black;
-    /* padding-bottom: 5px; */
     margin-right: 30px;
     transition: all 0.3s ease-in-out;
   }
 
 li a:hover {
-    color: #ebd461;
     border-bottom: 2px solid black;
   }
 
@@ -172,9 +159,7 @@ li a:hover {
     border-radius: 10px;
     width: 250px;
     align-items:center;
-    height: 80px;
-    margin-left: 350px;
-    margin-right: 50px;
+    height: 70px;
   }
   
   .help-button-text{

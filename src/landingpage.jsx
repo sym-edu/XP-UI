@@ -21,7 +21,7 @@ import {
 import { Line } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 import { TbRobot} from "react-icons/tb";
-import { Circle } from '@mui/icons-material';
+
 
 
 ChartJS.register(
@@ -102,14 +102,14 @@ export default function LandingPage() {
         </div>
         <ul className='nav-center'>
           <li className='nav-center-1'>
-             <a href="#" >
-              <span>Profile</span>
-              </a>
+             <Link to='/profile'> 
+              <span className='profile-span'>Profile</span>
+              </Link>
           </li>
           <li className='nav-center-2'>
-            <a href='#'>
+            <Link to='/landingpage'>
               <span>My Dashboard</span>
-            </a>
+              </Link>
             </li>
             <li>
             <Link to ='/chatbot'>
@@ -126,7 +126,6 @@ export default function LandingPage() {
           <br/>
           <br/>
           <h2>My Courses</h2>
-          <a href='#'>
             <button id='courses-btn' onMouseOver={handleHover} className='courses-btn'>
               <div className='btn-icon-1'>
               <span className='fl'>FL-101</span>
@@ -134,8 +133,6 @@ export default function LandingPage() {
               </div>
               <progress id="ProgressBar" value="78" max="100" title=""></progress>
               </button>
-          </a>
-          <a href='#'>
             <button id='courses-btn' onMouseOver={handleHover} className='courses-btn'>
               <div className='btn-icon-2'>
               <span className='myc'>My Courses</span>
@@ -143,8 +140,6 @@ export default function LandingPage() {
               </div>
               <progress id="ProgressBar" value="50" max="100" title=''></progress>
               </button>
-          </a>
-          <a href='#'>
             <button id='courses-btn' onMouseOver={handleHover} className='courses-btn-3'>
               <div className='btn-icon-3'>
               <span>Assignments</span>
@@ -152,26 +147,20 @@ export default function LandingPage() {
               </div>
               <progress id="ProgressBar" value="63" max="100" title=""></progress>
               </button>
-          </a>
-          <a href='#'>
             <button id='courses-btn' className='courses-btn-4'>
               <span className='note-span'>My Notes</span>
               <SlNote/>
               </button>
-          </a>
         </div>
         <div className="content-area">
-                <div className="content-button">
-        <a>
-        <Link to="/curriculum">
-           <button className="content-btn" id="btn">
+               <button className='content-btn' id="btn">
+               
+              <div className="content-btn-content">
             <span>Continue Your Learning</span> 
-            <span>STOCKS AND INVESTING</span> 
+            <span><Link to='/curriculum'>STOCKS AND INVESTING</Link></span> 
             <FaRegPlayCircle size={32}/>
+            </div>
             </button>
-            </Link>
-            </a>
-      </div>
       <div className="below-content-button"> 
          <div className="stats">
              <h3 className='stats-title'>My Stats</h3>

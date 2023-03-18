@@ -44,8 +44,7 @@ margin-left:120px;
 }
 
 .help-button{
-    margin-right:0;
-    margin-left:380px;
+    margin-left:440px;
     align-self: right;
     margin-top: 20px;
     height:70px;
@@ -56,23 +55,22 @@ margin-left:120px;
     font-size:1.8rem;
 }
 
-.content-button{
-    margin-top: 20px;
-    width:100%;
-    margin-left:5%;
-}
-
-.content-butotn a{
-    width:60%;
-}
-
-.content-button a button{
-    background-color: #1E4A5D;
+.content-btn{
     color:white;
+    background-color: #1E4A5D;
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    
     align-items: center;
+    height:70px;
+    margin-left:20px;
+}
+
+.content-btn-content{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .content-area{
@@ -137,8 +135,13 @@ margin-left:120px;
 }
 
 .courses-sidebar button{
+    display:flex;
+    flex-direction: column;
+    background-color: #ebd461;
    margin-bottom: 40px; 
-   height:70px;  
+   height:70px;
+   width:330px;  
+   border:none;
 }
 
 .courses-sidebar button progress{
@@ -185,3 +188,10 @@ canvas{
     size:32;
 }
 
+.courses-btn{
+    margin-right: 10px;
+}
+
+.profile-span{
+    font-size:1.7rem;
+}
