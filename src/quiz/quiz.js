@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./quiz.css";
-export default function App() {
+export default function QuizComponent() {
 	const questions = [
 		{
 			questionText: 'What is the capital of France?',

@@ -16,14 +16,14 @@ export default function Curriculum (){
         </div>
         <ul className='nav-center'>
           <li className='nav-center-1'>
-             <a href="#" >
+             <Link to='/profile'>
               <span>Profile</span>
-              </a>
+              </Link>
           </li>
           <li className='nav-center-2'>
-            <a href='#'>
+            <Link to='/landingpage'>
               <span>My Dashboard</span>
-            </a>
+            </Link>
             </li>
             <li>
               <Link to='/chatbot' className='chatbot-link'>
@@ -37,88 +37,56 @@ export default function Curriculum (){
         </ul>
         </div>
         <div className='cur-below-nav'>
-<div className="sidebar">
-    <span>
+<div className="courses-sidebar">
+  <br/>
+  <br/>
+    <h2>
         Curriculum
-    </span>
-    <a href="#">
+    </h2>
   <button className='sidebar-btn-1'>
     <div className="button-text">
-      <pre>1. Intro to Finance</pre>
-      <div className='sidebar-btn-img'>
+      <span>1. Intro to Finance</span>
       <FaRegPlayCircle/>
       </div>
-    </div>
-    <div className="progress-bar">
-        <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
-    </div>
+      <progress id="ProgressBar" value="78" max="100" title=""></progress>
   </button>
-  </a>
-  <a href="#">
   <button>
     <div className="button-text">
-      <pre>2. Stock and Investing</pre>
-      <div className='sidebar-btn-img'>
+      <span>2. Stock and Investing</span>
       <FaRegPlayCircle/>
       </div>
-    </div>
-    <div className="progress-bar">
-    <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
-    </div>
+    <progress id="ProgressBar" value="78" max="100" title=""></progress>
   </button>
-  </a>
-  <a href="#">
+  <Link to='/quiz'>
   <button>
     <div className="button-text">
-      3. Quiz 1
-      <div className='sidebar-btn-img'>
+      <span>3. Quiz 1</span>
       <FaPenAlt/>
       </div>
-    </div>
-    <div className="progress-bar">
-    <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
-    </div>
-  </button>
-  </a>
-  <a href="#">
+    <progress id="ProgressBar" value="78" max="100" title=""></progress>
+    </button>
+    </Link>
   <button>
     <div className="button-text">
-      4. Financing
-      <div className='sidebar-btn-img'>
+      <span>4. Financing</span> 
       <FaRegPlayCircle/>
     </div>
-    </div>
-    <div className="progress-bar">
-    <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
-    </div>
+    <progress id="ProgressBar" value="78" max="100" title=""></progress>
   </button>
-  </a>
-  <a href="#">
   <button>
     <div className="button-text">
-      5. Banking
-      <div className='sidebar-btn-img'>
+      <span>5. Banking</span>
       <FaRegPlayCircle/>
     </div>
-    </div>
-    <div className="progress-bar">
-    <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
-    </div>
+    <progress id="ProgressBar" value="78" max="100" title=""></progress>
   </button>
-  </a>
-  <a href="#">
   <button>
     <div className="button-text">
-      6. Quiz 2
-      <div className='sidebar-btn-img'>
+      <span>6. Quiz 2</span>
       <FaPenAlt/>
       </div>
-    </div>
-    <div className="progress-bar">
-    <div className="progress-fill" style ={{  width: '60%' , backgroundColor: 'rgb(0, 0, 0)'}}></div>
-    </div>
+    <progress id="ProgressBar" value="78" max="100" title=""></progress>
   </button>
-  </a>
 </div>
 <div className="content">
     <video id="my-video" className="custom-video" controls/>

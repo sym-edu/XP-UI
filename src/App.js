@@ -6,6 +6,8 @@ import { Login } from './Login/Login.js';
 import Register from './Login/Register.js';
 import Assignments from './uploading/uploader.js';
 import Chatbot from './chatbot/chatbot.js';
+import ProfileStatistics from './Profile/profile.js';
+import QuizComponent from './quiz/quiz.js';
 
 function App() {
 
@@ -28,7 +30,13 @@ function App() {
             <Route path='/chatbot'>
                 <Chatbot />
             </Route>
-            <Route component = { LandingPage} />
+            <Route exact path='/profile'>
+              <ProfileStatistics />
+            </Route>
+            <Route exact path='/quiz'>
+              <QuizComponent />
+            </Route>
+            <Route component = { LandingPage } />
           </Switch>
       </Router>
     </div>
