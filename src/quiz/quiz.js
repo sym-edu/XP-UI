@@ -111,7 +111,7 @@ export default function QuizComponent() {
 		}
 	};
 	return (
-		<div className='app'>
+		<div className='quii'>
 			{showScore ? (
 				<div className='score-section'>
 					You scored {score} out of {questions.length}

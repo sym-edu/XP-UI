@@ -9,17 +9,17 @@
     color: black;
   }
   
-  /* .app {
+  .quii {
     background-color: #f2cb06;
-    width: 600px;
-    min-height: 300px;
+    width: 100%;
+    min-height: 760px;
     height: min-content;
-    border-radius: 15px;
+    border-radius: 0;
     padding: 20px;
     box-shadow: 10px 10px 42px 5px rgba(235, 76, 3, 0.75);
     display: flex;
     justify-content: space-evenly;
-  } */
+  }
   
   .score-section {
     display: flex;
@@ -49,7 +49,7 @@
   
   .timer-text {
     background: rgb(240, 177, 61);
-    padding: 15px;
+    padding: 100px;
     margin-top: 20px;
     margin-right: 20px;
     border: 5px solid rgb(255, 189, 67);
@@ -66,7 +66,7 @@
   }
   
   button {
-    width: 100%;
+    width: 50%;
     font-size: 17px;
     color: black;
     background-color: white;
