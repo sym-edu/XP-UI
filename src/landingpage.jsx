@@ -116,10 +116,12 @@ export default function LandingPage() {
             <TbRobot className='sichatbot' />
             </Link> 
             </li>
+            <Link to='/helper'>
             <button className='help-button'>
                 <span className='help-button-text'>Need Help</span>
                 <AiOutlineQuestionCircle style= {{ color:'black'}} />
             </button>
+            </Link>
         </ul>
         </div>
         <div className="courses-sidebar">
@@ -156,8 +158,8 @@ export default function LandingPage() {
                <button className='content-btn' id="btn">
                
               <div className="content-btn-content">
-            <span>Continue Your Learning</span> 
-            <span><Link to='/curriculum'>STOCKS AND INVESTING</Link></span> 
+            <span style={{color:'white'}}>Continue Your Learning</span> 
+            <Link to='/curriculum'><span style={{color:'white'}}>STOCKS AND INVESTING</span></Link> 
             <FaRegPlayCircle size={32}/>
             </div>
             </button>
@@ -178,11 +180,7 @@ export default function LandingPage() {
                         <img className='my-image' src={ybar} alt="Overall Progress" />
                     </div>
           </div>
-          {/* <div className='my-chart'>
-      <ReactApexChart options={chartOptions} series={chartOptions.series} type="bar" height={350} />
-      <button onClick={updateChart}>Update Chart</button>
-    </div> */}
-    <div className="my-chart">
+              <div className="my-chart">
     <Line options={options} data={data}  />
     </div>
       </div>

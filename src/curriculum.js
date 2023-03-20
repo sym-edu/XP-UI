@@ -6,6 +6,8 @@ import { FaRegPlayCircle } from "react-icons/fa";
 import { FaPenAlt} from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { TbRobot } from "react-icons/tb";
+import videoFile from './img-imports/my-video.mp4'
+
 export default function Curriculum (){
   return(
     <div className='curriculum-container'>
@@ -89,8 +91,7 @@ export default function Curriculum (){
   </button>
 </div>
 <div className="content">
-    <video id="my-video" className="custom-video" controls/>
-      <source src="./img-imports/my-video.mp4" type="video/mp4"/>
+    <video src={videoFile} controls/>
   </div>
   </div>
 </div>

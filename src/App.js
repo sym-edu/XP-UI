@@ -8,7 +8,8 @@ import Assignments from './uploading/uploader.js';
 import Chatbot from './chatbot/chatbot.js';
 import ProfileStatistics from './Profile/profile.js';
 import QuizComponent from './quiz/quiz.js';
-
+import Uploader from './uploading/uploader.js';
+import NeedHelpPage from './help-section/helppage.js';
 function App() {
 
   return (
@@ -36,7 +37,13 @@ function App() {
             <Route exact path='/quiz'>
               <QuizComponent />
             </Route>
-            <Route component = { LandingPage } />
+            <Route exact path='/uploader'>
+              <Uploader />
+            </Route>
+            <Route exact path='/helper'>
+              <NeedHelpPage />
+            </Route>
+            <Route component = { Login } />
           </Switch>
       </Router>
     </div>
