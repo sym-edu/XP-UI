@@ -1,37 +1,32 @@
 import React, { useState } from 'react';
 import './uploader.css';
 
-function Uploader() {
-  const [file, setFile] = useState(null);
+function TextBoxWithSubmit() {
+  const [inputValue, setInputValue] = useState('');
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Do something with the uploaded file
-  };
+    // do something with the input value, e.g. send it to the server
+    console.log(inputValue);
+    setInputValue('');
+  }
 
   return (
-    <div className="assignment-upload-container">
-      <h2>Upload Your Assignment</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="file-upload" className="file-upload-label">
-          Choose a file
-        </label>
-        <input
-          id="file-upload"
-          type="file"
-          onChange={handleFileChange}
-          className="file-upload-input"
-        />
-        <button type="submit" className="submit-button">
-          Submit
-        </button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="textbox-form">
+      <input 
+        type="text" 
+        placeholder="Type something..." 
+        value={inputValue} 
+        onChange={handleInputChange} 
+        className="textbox-input"
+      />
+      <button type="submit" className="submit-button">Submit</button>
+    </form>
   );
 }
 
-export default Uploader;
+export default TextBoxWithSubmit;
