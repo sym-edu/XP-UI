@@ -149,10 +149,12 @@ export default function LandingPage() {
               </div>
               <progress id="ProgressBar" value="63" max="100" title=""></progress>
               </button>
+              <Link to='/mynotes'>
             <button id='courses-btn' className='courses-btn-4'>
               <span className='note-span'>My Notes</span>
               <SlNote/>
               </button>
+              </Link>
         </div>
         <div className="content-area">
                <button className='content-btn' id="btn">

@@ -10,6 +10,8 @@ import ProfileStatistics from './Profile/profile.js';
 import QuizComponent from './quiz/quiz.js';
 import Uploader from './uploading/uploader.js';
 import NeedHelpPage from './help-section/helppage.js';
+import NotesApp from './mynotes/notesapp.js';
+
 function App() {
 
   return (
@@ -22,13 +24,13 @@ function App() {
             <Route exact path='/register'>
                 <Register />
             </Route>
-            <Route exact path='/landingpage'>
+            <Route path='/landingpage'>
                 <LandingPage />
             </Route>
             <Route exact path='/curriculum'>
                 <Curriculum />
             </Route>
-            <Route path='/chatbot'>
+            <Route exact path='/chatbot'>
                 <Chatbot />
             </Route>
             <Route exact path='/profile'>
@@ -43,7 +45,10 @@ function App() {
             <Route exact path='/helper'>
               <NeedHelpPage />
             </Route>
-            <Route component = { Curriculum } />
+            <Route exact path='/mynotes'>
+              <NotesApp />
+            </Route>
+            <Route component = { LandingPage } />
           </Switch>
       </Router>
     </div>
