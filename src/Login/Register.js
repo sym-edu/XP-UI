@@ -36,6 +36,9 @@ const [show, setShow] = useState(true);
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -53,43 +56,61 @@ const [show, setShow] = useState(true);
         setErrMsg('');
     }, [user, pwd, matchPwd])
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     // if button enabled with JS hack
+    //     const v1 = USER_REGEX.test(user);
+    //     const v2 = PWD_REGEX.test(pwd);
+    //     if (!v1 || !v2) {
+    //         setErrMsg("Invalid Entry");
+    //         return;
+    //     }
+    //     try {
+    //         const response = await axios.post(REGISTER_URL,
+    //             JSON.stringify({ user, pwd }),
+    //             {
+    //                 headers: { 'Content-Type': 'application/json' },
+    //                 withCredentials: true
+    //             }
+    //         );
+    //         // TODO: remove console.logs before deployment
+    //         console.log(JSON.stringify(response?.data));
+    //         //console.log(JSON.stringify(response))
+    //         setSuccess(true);
+    //         //clear state and controlled inputs
+    //         setUser('');
+    //         setPwd('');
+    //         setMatchPwd('');
+    //     } catch (err) {
+    //         if (!err?.response) {
+    //             setErrMsg('No Server Response');
+    //         } else if (err.response?.status === 409) {
+    //             setErrMsg('Username Taken');
+    //         } else {
+    //             setErrMsg('Registration Failed')
+    //         }
+    //         errRef.current.focus();
+    //     }
+    // }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // if button enabled with JS hack
-        const v1 = USER_REGEX.test(user);
-        const v2 = PWD_REGEX.test(pwd);
-        if (!v1 || !v2) {
-            setErrMsg("Invalid Entry");
-            return;
+        const response = await fetch('http://127.0.0.1:8000/authentication/register/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, password }),
+          credentials: 'include', // include cookies in the request
+        });
+        if (response.ok) {
+          // registration successful, redirect to home page
+          window.location.href = '/';
+        } else {
+          // registration failed, display error message
+          const data = await response.json();
+          console.log(data.error);
         }
-        try {
-            const response = await axios.post(REGISTER_URL,
-                JSON.stringify({ user, pwd }),
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
-                }
-            );
-            // TODO: remove console.logs before deployment
-            console.log(JSON.stringify(response?.data));
-            //console.log(JSON.stringify(response))
-            setSuccess(true);
-            //clear state and controlled inputs
-            setUser('');
-            setPwd('');
-            setMatchPwd('');
-        } catch (err) {
-            if (!err?.response) {
-                setErrMsg('No Server Response');
-            } else if (err.response?.status === 409) {
-                setErrMsg('Username Taken');
-            } else {
-                setErrMsg('Registration Failed')
-            }
-            errRef.current.focus();
-        }
-    }
-
+      };
     return (
         <>
             {success ? (
@@ -120,8 +141,8 @@ const [show, setShow] = useState(true);
                             id="username"
                             ref={userRef}
                             autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
+                            onChange={(e) => setUsername(e.target.value)}
+                            value={username} 
                             required
                             aria-invalid={validName ? "false" : "true"}
                             aria-describedby="uidnote"
@@ -144,8 +165,8 @@ const [show, setShow] = useState(true);
                         <input
                             type="password"
                             id="password"
-                            onChange={(e) => setPwd(e.target.value)}
-                            value={pwd}
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
                             required
                             aria-invalid={validPwd ? "false" : "true"}
                             aria-describedby="pwdnote"
@@ -187,7 +208,8 @@ const [show, setShow] = useState(true);
                         Already registered?<br />
                         <span className="line">
                             {/*put router link here*/}
-                            <a href="#"><Link to='/Login' onClick={handleShow}>Sign In</Link></a>
+                            {/* <a href="#"><Link to='/Login' onClick={handleShow}>Sign In</Link></a> */}
+                            <button type="submit">Register</button>
                         </span>
                     </p>
                 </section>
