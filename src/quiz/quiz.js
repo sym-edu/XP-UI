@@ -117,7 +117,7 @@ export default function QuizComponent() {
 		}
 	};
 	return (
-		<div className='curriculum-container'>
+		<div className='quiz-container'>
         <div className='nav'>
         <div className='nav-left'>
                   <img src={Logo} alt='sym-logo' className='nav-logo'/>
@@ -145,6 +145,7 @@ export default function QuizComponent() {
             </button>
         </ul>
         </div>
+		<div className='sidebar-quiz'>
 		<div className="courses-sidebar">
   <br/>
   <br/>
@@ -216,6 +217,7 @@ export default function QuizComponent() {
 					</div>
 				</>
 			)}
+		</div>
 		</div>
 		</div>
 	);

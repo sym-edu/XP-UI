@@ -79,11 +79,10 @@ margin-left:120px;
     display:flex;
     flex-direction: column;
     height:80%;
-    border-left:2px solid black;
 }
 
-.content-area:border-left{
-    height:100%;
+.courses-sidebar:border-right{
+    height:200%;
 }
 
 .below-content-button{

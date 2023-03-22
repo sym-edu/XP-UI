@@ -1,14 +1,22 @@
-import React from "react";
+import React , {useState} from "react";
 import "./curriculum.css";
 import {AiOutlineQuestionCircle} from 'react-icons/ai';
 import Logo from './img-imports/symlogo.jpeg';
 import { FaRegPlayCircle } from "react-icons/fa";
 import { FaPenAlt} from 'react-icons/fa';
 import { Link } from "react-router-dom";
-import { TbRobot } from "react-icons/tb";
 import videoFile from './img-imports/my-video.mp4'
+import Chatbot from './chatbot/chatbot.js';
+
 
 export default function Curriculum (){
+
+  const [showChatbot, setShowChatbot] = useState(false);
+
+  const toggleChatbot = () => {
+    setShowChatbot(!showChatbot);
+  };
+
   return(
     <div className='curriculum-container'>
         <div className='nav'>
@@ -28,9 +36,8 @@ export default function Curriculum (){
             </Link>
             </li>
             <li>
-              <Link to='/chatbot' className='chatbot-link'>
-              <TbRobot />
-              </Link>
+            <span className='chatbot-span' onClick={ toggleChatbot }> Chatbot</span>
+                  { showChatbot && <Chatbot />}
             </li>
             <Link to='/helper'>
             <button className='help-button'>
