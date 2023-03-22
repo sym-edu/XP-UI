@@ -48,13 +48,13 @@ const [show, setShow] = useState(true);
     }, [user])
 
     useEffect(() => {
-        setValidPwd(PWD_REGEX.test(pwd));
-        setValidMatch(pwd === matchPwd);
-    }, [pwd, matchPwd])
+        setValidPwd(PWD_REGEX.test(password));
+        setValidMatch(password === matchPwd);
+    }, [password, matchPwd])
 
     useEffect(() => {
         setErrMsg('');
-    }, [user, pwd, matchPwd])
+    }, [user, password, matchPwd])
 
     // const handleSubmit = async (e) => {
     //     e.preventDefault();
@@ -104,7 +104,7 @@ const [show, setShow] = useState(true);
         });
         if (response.ok) {
           // registration successful, redirect to home page
-          window.location.href = '/';
+          window.location.href = '/login';
         } else {
           // registration failed, display error message
           const data = await response.json();
@@ -202,14 +202,18 @@ const [show, setShow] = useState(true);
                             Must match the first password input field.
                         </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        {/* <button type="submit" disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button> */}
+
+                        <button type="submit">Sign Up</button>
+
                     </form>
                     <p>
                         Already registered?<br />
                         <span className="line">
                             {/*put router link here*/}
                             {/* <a href="#"><Link to='/Login' onClick={handleShow}>Sign In</Link></a> */}
-                            <button type="submit">Register</button>
+                            {/* <button type="submit">Register</button> */}
+
                         </span>
                     </p>
                 </section>

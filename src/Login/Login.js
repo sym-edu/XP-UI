@@ -1,12 +1,10 @@
 import { useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from "./context/AuthProvider";
 import { Link } from 'react-router-dom';
-import axios from './api/axios';
 import './styles.css';
 import Image from '../img-imports/leftimg.jpg';
-const LOGIN_URL = '/auth';
-  
 
+const LOGIN_URL = 'http://localhost:8000/authentication/login/';
 
 export const Login = () => {
 
@@ -16,58 +14,59 @@ export const Login = () => {
     setShow(false);
   };
   
-    const { setAuth } = useContext(AuthContext);
-    const userRef = useRef();
-    const errRef = useRef();
+  const { setAuth } = useContext(AuthContext);
+  const userRef = useRef();
+  const errRef = useRef();
   
-    const [user, setUser] = useState('');
-    const [pwd, setPwd] = useState('');
-    const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
+  const [user, setUser] = useState('');
+  const [pwd, setPwd] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+  const [success, setSuccess] = useState(false);
   
-    useEffect(() => {
-      userRef.current.focus();
-    }, []);
+  useEffect(() => {
+    userRef.current.focus();
+  }, []);
   
-    useEffect(() => {
-      setErrMsg('');
-    }, [user, pwd]);
+  useEffect(() => {
+    setErrMsg('');
+  }, [user, pwd]);
   
-    const handleSubmit = async (e) => {
-      e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
   
-      try {
-        const response = await axios.post(
-          LOGIN_URL,
-          JSON.stringify({ user, pwd }),
-          {
-            headers: { 'Content-Type': 'application/json' },
-            withCredentials: true,
-          }
-        );
-        console.log(JSON.stringify(response?.data));
-        //console.log(JSON.stringify(response));
-        const accessToken = response?.data?.accessToken;
-        const roles = response?.data?.roles;
+    try {
+      const response = await fetch(LOGIN_URL, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username: user, password: pwd }),
+      });
+      const responseData = await response.json();
+      if (response.ok) {
+        console.log(JSON.stringify(responseData));
+        const accessToken = responseData?.accessToken;
+        const roles = responseData?.roles;
         setAuth({ user, pwd, roles, accessToken });
         setUser('');
         setPwd('');
         setSuccess(true);
-      } catch (err) {
-        if (!err?.response) {
-          setErrMsg('No Server Response');
-        } else if (err.response?.status === 400) {
-          setErrMsg('Missing Username or Password');
-        } else if (err.response?.status === 401) {
-          setErrMsg('Unauthorized');
-        } else {
-          setErrMsg('Login Failed');
-        }
-        errRef.current.focus();
+      } else if (response.status === 400) {
+        setErrMsg('Missing Username or Password');
+      } else if (response.status === 401) {
+        setErrMsg('Unauthorized');
+      } else {
+        setErrMsg('Login Failed');
       }
-    };
-
-    return (
+      errRef.current.focus();
+    } catch (err) {
+      console.log(err);
+      setErrMsg('No Server Response');
+      errRef.current.focus();
+    }
+  };
+      return (
         <>
             {success ? (
                 <section>
