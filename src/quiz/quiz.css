@@ -1,9 +1,3 @@
-/* body {
-    margin: 0;
-    font-family: "Cursive";
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  } */
   * {
     font-family: "Cursive";
     color: black;
@@ -11,13 +5,14 @@
   
   .quii {
     background-color: #f2cb06;
-    width: 700px;
-    min-height: 500px;
-    height: min-content;
+    width: 80%;
+    height: 0%;
     border-radius: 15px;
     padding: 20px;
+    align-items: flex-start;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .score-section {
@@ -97,3 +92,112 @@
   button svg {
     margin-right: 5px;
   }
+
+  .curriculum-cotainer{
+    display:block;
+    height:100vh;
+  }
+
+  .sidebar {
+    margin-top:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 22%;
+    padding: 20px;
+    height: 75%;
+    z-index: -1;
+  }
+
+  .content {
+    border-left: 2px solid rgb(0, 0, 0); 
+    width: 80%; /* set the width of the main content area */
+    padding: 20px; /* add padding to the content area */
+  }
+  
+  .content:border-left{
+    height: 120%;
+  }
+
+  .sidebar a{
+    width:100%;
+  }
+  
+  .sidebar h2{
+    margin-left: 90px;
+  }
+  
+  .sidebar-btn {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-btn-1{
+  cursor: pointer;
+  overflow: visible;
+  }
+  
+  .sidebar-btn-img{
+    margin-left: 50px;
+  }
+
+  .button-text{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .button-text pre{
+    width:50%;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .sidebar span,pre {
+  font-size:1.6rem;
+  }
+  
+  .button {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: flex-start;
+    width: 330px;
+    height: 70px;
+    text-align: left;
+    color: black;
+    background-color: #ebd461;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 25px;
+  }
+
+  .sdiebar button{
+    background-color: #ebd461;
+  }
+  
+  .sidebar button:hover {
+    cursor: pointer;
+  }
+
+  .cur-below-nav{
+    display: flex;
+  }
+  
+  .nav {
+      margin-left: 5px;
+      width: 95%;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      margin-top: 5px;
+      border-radius: 10px 10px 10px 10px;
+      border: 2px solid rgba(0, 0, 0, 0.357);
+      z-index: 20;
+      height:120px;
+    }
+    
+    nav  button:hover {
+      background-color: #ebd461d5;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+    }
+    
