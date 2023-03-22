@@ -94,7 +94,7 @@ const [show, setShow] = useState(true);
     // }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://127.0.0.1:8000/authentication/register/', {
+        const response = await fetch('http://43.205.144.122:8000/authentication/register/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ const [show, setShow] = useState(true);
         });
         if (response.ok) {
           // registration successful, redirect to home page
-          window.location.href = '/login';
+          window.location.href = '/';
         } else {
           // registration failed, display error message
           const data = await response.json();
