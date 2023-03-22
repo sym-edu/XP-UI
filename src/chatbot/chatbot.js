@@ -1,29 +1,40 @@
-import React from 'react';
-import './chatbot.css'; // import the CSS file
+import React, { useState } from 'react';
+import axios from 'axios';
+import './chatbot.css';
 
-function Chatbot() {
+const Chatbot = () => {
+  const [message, setMessage] = useState('');
+  const [botResponse, setBotResponse] = useState('');
+
+  const sendMessage = () => {
+    axios.post('/api/chatbot/', { message })
+      .then(response => {
+        setBotResponse(response.data.message);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  const handleChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    sendMessage();
+    setMessage('');
+  };
+
   return (
-    <div className='container'>
-    <div className="wrapper">
-      <div className="title">Talk bot</div>
-      <div className="box">
-        <div className="item">
-          <div className="icon">
-            <i className="fa fa-user"></i>
-          </div>
-          <div className="msg">
-            <p>Speak Your Mind!!</p>
-          </div>
-        </div>
-      </div>
-      <div className="typing-area">
-        <div className="input-field">
-          <input type="text" placeholder="Type your message" required />
-          <button>Send</button>
-        </div>
-      </div>
-    </div>
+    <div className='chatbot-container'>
+      <div className='chatbot-response'>{botResponse}</div>
+      <form onSubmit={handleSubmit}>
+        <input className='chatbot-input' type="text" value={message} onChange={handleChange} placeholder='Type a message...' />
+        <button className='chatbot-send' type="submit">Send</button>
+      </form>
     </div>
   );
-}
+};
+
 export default Chatbot;
