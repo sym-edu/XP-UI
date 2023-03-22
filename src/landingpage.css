@@ -13,7 +13,7 @@
     display:flex;
     margin-left:3%;
     align-items:center;
-    margin-top: 20px;
+    margin-top:  20px;
 }
 
 .nav-left{
@@ -37,6 +37,7 @@ display:flex;
 align-items:center;
 justify-content: space-between;
 margin-left:120px;
+
 }
 
 .nav-center span{
@@ -44,11 +45,9 @@ margin-left:120px;
 }
 
 .help-button{
-    margin-left:440px;
-    align-self: right;
-    margin-top: 20px;
     height:70px;
     padding-top:3px;
+    margin-bottom: 20px;
 }
 
 .help-button span{
@@ -60,7 +59,7 @@ margin-left:120px;
     background-color: #1E4A5D;
     display:flex;
     flex-direction: row;
-    width:80%;
+    width:90%;
     align-items: center;
     height:70px;
     margin-left:20px;
@@ -122,7 +121,7 @@ margin-left:120px;
 
 .courses-sidebar{
     float:left;
-    border-right:1px solid black;
+    border-right:2px solid black;
     width:20%;
     margin-left:20px;
     margin-right:0px;
@@ -144,7 +143,7 @@ margin-left:120px;
     background-color: #ebd461;
    margin-bottom: 40px; 
    height:70px;
-   width:330px;  
+   width:90%;  
    border:none;
 }
 
@@ -167,10 +166,6 @@ justify-content:center;
 flex-direction: row;
 }
 
-.belownav{
-    display: flex;
-}
-
 canvas{
     margin-left:100px;
     height:400px;
@@ -188,15 +183,31 @@ canvas{
     margin-top:8px;
 }
 
-.sichatbot{
-    size:32;
-}
-
 .courses-btn{
     margin-right: 10px;
 }
 
 .chatbot-span{
-    font-size:1.7rem;
+    font-size:2.0rem;
     cursor:pointer;
+}
+
+.chatbot-span:hover{
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.sidebar-contentarea{
+    display:flex;
+    flex-direction: row;
+}
+
+.help-button-text{
+    justify-content: flex-end;
+    font-size:1.8rem;
+    font-weight:normal;
+}
+
+.nav-center{
+    margin-left:15%;
 }

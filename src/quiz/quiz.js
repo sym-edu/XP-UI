@@ -6,7 +6,16 @@ import {AiOutlineQuestionCircle} from 'react-icons/ai';
 import { FaRegPlayCircle } from "react-icons/fa";
 import { FaPenAlt} from 'react-icons/fa';
 import "./quiz.css";
+import Chatbot from '../chatbot/chatbot.js'
+
 export default function QuizComponent() {
+
+	const [showChatbot, setShowChatbot] = useState(false);
+
+	const toggleChatbot = () => {
+	  setShowChatbot(!showChatbot);
+	};
+
 	const questions = [
 		{
 			questionText: 'What is the capital of France?',
@@ -118,31 +127,31 @@ export default function QuizComponent() {
 	};
 	return (
 		<div className='quiz-container'>
-        <div className='nav'>
+       <div className='nav'>
         <div className='nav-left'>
                   <img src={Logo} alt='sym-logo' className='nav-logo'/>
         <h3 className='nav-logo-h3'>Hello,Learner!</h3>
         </div>
         <ul className='nav-center'>
           <li className='nav-center-1'>
-             <Link to='/profile'>
-              <span>Profile</span>
+             <Link to='/profile'> 
+              <span className='profile-span'>Profile</span>
               </Link>
           </li>
           <li className='nav-center-2'>
             <Link to='/landingpage'>
               <span>My Dashboard</span>
+              </Link>
+          </li>
+          <li className='nav-center-3'>
+            <span className='chatbot-span' onClick={ toggleChatbot }> Chatbot</span>
+                  { showChatbot && <Chatbot />}
+          </li>
+          <li className='nav-center-4'>
+            <Link to='/helper'>
+                <span className='help-button-text'>Need Help ?</span>
             </Link>
             </li>
-            <li>
-              <Link to='/chatbot' className='chatbot-link'>
-              <TbRobot />
-              </Link>
-            </li>
-            <button className='help-button'>
-                <span className='help-button-text'>Need Help</span>
-                <AiOutlineQuestionCircle/>
-            </button>
         </ul>
         </div>
 		<div className='sidebar-quiz'>

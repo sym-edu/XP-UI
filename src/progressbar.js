@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProgressBar = ({ progress }) => {
+const statsProgressBar = ({ progress }) => {
   return (
     <div className="progress-bar">
       <div className="progress-bar-inner" style={{ width: `${progress}%` }}>
@@ -10,4 +10,4 @@ const ProgressBar = ({ progress }) => {
   );
 };
 
-export default ProgressBar;
+export default statsProgressBar;

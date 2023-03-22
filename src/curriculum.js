@@ -8,6 +8,11 @@ import { Link } from "react-router-dom";
 import videoFile from './img-imports/my-video.mp4'
 import Chatbot from './chatbot/chatbot.js';
 
+export function handleSidebarbuttonHover() {
+  const progressBar = document.getElementById('ProgressBar');
+  const value = progressBar.value;
+  progressBar.title = `${value}%`;
+}
 
 export default function Curriculum (){
 
@@ -18,7 +23,7 @@ export default function Curriculum (){
   };
 
   return(
-    <div className='curriculum-container'>
+    <div className='maincontainer'>
         <div className='nav'>
         <div className='nav-left'>
                   <img src={Logo} alt='sym-logo' className='nav-logo'/>
@@ -26,25 +31,24 @@ export default function Curriculum (){
         </div>
         <ul className='nav-center'>
           <li className='nav-center-1'>
-             <Link to='/profile'>
-              <span>Profile</span>
+             <Link to='/profile'> 
+              <span className='profile-span'>Profile</span>
               </Link>
           </li>
           <li className='nav-center-2'>
             <Link to='/landingpage'>
               <span>My Dashboard</span>
-            </Link>
-            </li>
-            <li>
+              </Link>
+          </li>
+          <li className='nav-center-3'>
             <span className='chatbot-span' onClick={ toggleChatbot }> Chatbot</span>
                   { showChatbot && <Chatbot />}
-            </li>
+          </li>
+          <li className='nav-center-4'>
             <Link to='/helper'>
-            <button className='help-button'>
-                <span className='help-button-text'>Need Help</span>
-                <AiOutlineQuestionCircle/>
-            </button>
+                <span className='help-button-text'>Need Help ?</span>
             </Link>
+            </li>
         </ul>
         </div>
         <div className='cur-below-nav'>
@@ -54,14 +58,14 @@ export default function Curriculum (){
     <h2>
         Curriculum
     </h2>
-  <button className='sidebar-btn-1'>
+  <button onClick={handleSidebarbuttonHover} className='courses-btn'>
     <div className="button-text">
       <span>1. Intro to Finance</span>
       <FaRegPlayCircle/>
       </div>
       <progress id="ProgressBar" value="78" max="100" title=""></progress>
   </button>
-  <button>
+  <button onClick={handleSidebarbuttonHover} className='courses-btn'>
     <div className="button-text">
       <span>2. Stock and Investing</span>
       <FaRegPlayCircle/>
@@ -69,7 +73,7 @@ export default function Curriculum (){
     <progress id="ProgressBar" value="78" max="100" title=""></progress>
   </button>
   <Link to='/quiz'>
-  <button>
+  <button onClick={handleSidebarbuttonHover} className='courses-btn'>
     <div className="button-text">
       <span>3. Quiz 1</span>
       <FaPenAlt/>
@@ -77,21 +81,21 @@ export default function Curriculum (){
     <progress id="ProgressBar" value="78" max="100" title=""></progress>
     </button>
     </Link>
-  <button>
+  <button onClick={handleSidebarbuttonHover} className='courses-btn'>
     <div className="button-text">
       <span>4. Financing</span> 
       <FaRegPlayCircle/>
     </div>
     <progress id="ProgressBar" value="78" max="100" title=""></progress>
   </button>
-  <button>
+  <button onClick={handleSidebarbuttonHover} className='courses-btn'>
     <div className="button-text">
       <span>5. Banking</span>
       <FaRegPlayCircle/>
     </div>
     <progress id="ProgressBar" value="78" max="100" title=""></progress>
   </button>
-  <button>
+  <button onClick={handleSidebarbuttonHover} className='courses-btn'>
     <div className="button-text">
       <span>6. Quiz 2</span>
       <FaPenAlt/>
@@ -101,10 +105,9 @@ export default function Curriculum (){
 </div>
 <div className="content">
     <video src={videoFile} controls/>
-  </div>
-  </div>
 </div>
-
+</div>
+</div>
   )
 };
 
