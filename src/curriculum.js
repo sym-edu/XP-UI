@@ -32,10 +32,12 @@ export default function Curriculum (){
               <TbRobot />
               </Link>
             </li>
+            <Link to='/helper'>
             <button className='help-button'>
                 <span className='help-button-text'>Need Help</span>
                 <AiOutlineQuestionCircle/>
             </button>
+            </Link>
         </ul>
         </div>
         <div className='cur-below-nav'>

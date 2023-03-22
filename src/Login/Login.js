@@ -88,7 +88,7 @@ export const Login = () => {
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Sign In</h1>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="username">Phone Number:</label>
+                        <label htmlFor="username">Username:</label>
                         <input
                             type="text"
                             id="username"

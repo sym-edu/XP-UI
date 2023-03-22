@@ -60,7 +60,7 @@ margin-left:120px;
     background-color: #1E4A5D;
     display:flex;
     flex-direction: row;
-    
+    width:80%;
     align-items: center;
     height:70px;
     margin-left:20px;
@@ -79,6 +79,11 @@ margin-left:120px;
     display:flex;
     flex-direction: column;
     height:80%;
+    border-left:2px solid black;
+}
+
+.content-area:border-left{
+    height:100%;
 }
 
 .below-content-button{
@@ -119,7 +124,7 @@ margin-left:120px;
 .courses-sidebar{
     float:left;
     border-right:1px solid black;
-    width:350px;
+    width:20%;
     margin-left:20px;
     margin-right:0px;
     height:100vh;
@@ -192,6 +197,7 @@ canvas{
     margin-right: 10px;
 }
 
-.profile-span{
+.chatbot-span{
     font-size:1.7rem;
+    cursor:pointer;
 }

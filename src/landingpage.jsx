@@ -20,7 +20,7 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { Link } from "react-router-dom";
-import { TbRobot} from "react-icons/tb";
+import Chatbot from './chatbot/chatbot.js';
 
 
 
@@ -42,6 +42,12 @@ export function handleHover() {
 }
 
 export default function LandingPage() {
+
+  const [showChatbot, setShowChatbot] = useState(false);
+
+  const toggleChatbot = () => {
+    setShowChatbot(!showChatbot);
+  };
 
   const options = {
     responsive: true,
@@ -110,12 +116,11 @@ export default function LandingPage() {
             <Link to='/landingpage'>
               <span>My Dashboard</span>
               </Link>
-            </li>
-            <li>
-            <Link to ='/chatbot'>
-            <TbRobot className='sichatbot' />
-            </Link> 
-            </li>
+          </li>
+          <li>
+            <span className='chatbot-span' onClick={ toggleChatbot }> Chatbot</span>
+                  { showChatbot && <Chatbot />}
+          </li>
             <Link to='/helper'>
             <button className='help-button'>
                 <span className='help-button-text'>Need Help</span>
@@ -157,14 +162,13 @@ export default function LandingPage() {
               </Link>
         </div>
         <div className="content-area">
-               <button className='content-btn' id="btn">
-               
-              <div className="content-btn-content">
-            <span style={{color:'white'}}>Continue Your Learning</span> 
-            <Link to='/curriculum'><span style={{color:'white'}}>STOCKS AND INVESTING</span></Link> 
-            <FaRegPlayCircle size={32}/>
-            </div>
-            </button>
+              <button className='content-btn' id="btn">
+               <div className="content-btn-content">
+                 <span style={{color:'white'}}>Continue Your Learning</span> 
+                   <Link to='/curriculum'><span style={{color:'white'}}>STOCKS AND INVESTING</span></Link> 
+                      <FaRegPlayCircle size={32}/>
+                          </div>
+              </button>
       <div className="below-content-button"> 
          <div className="stats">
              <h3 className='stats-title'>My Stats</h3>

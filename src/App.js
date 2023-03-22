@@ -5,7 +5,7 @@ import { BrowserRouter as Router , Switch , Route } from "react-router-dom";
 import { Login } from './Login/Login.js';
 import Register from './Login/Register.js';
 // import Assignments from './uploading/uploader.js';
-import Chatbot from './chatbot/chatbot.js';
+import ChatbotComponent from './chatbot/chatbot.js';
 import ProfileStatistics from './Profile/profile.js';
 import QuizComponent from './quiz/quiz.js';
 import Uploader from './uploading/uploader.js';
@@ -24,28 +24,28 @@ function App() {
             <Route exact path='/register'>
                 <Register />
             </Route>
-            <Route path='/landingpage'>
+            <Route exact path='/landingpage'>
                 <LandingPage />
             </Route>
             <Route exact path='/curriculum'>
                 <Curriculum />
             </Route>
-            <Route exact path='/chatbot'>
-                <Chatbot />
+            <Route path='/chatbot'>
+                <ChatbotComponent />
             </Route>
-            <Route exact path='/profile'>
+            <Route path='/profile'>
               <ProfileStatistics />
             </Route>
             <Route exact path='/quiz'>
               <QuizComponent />
             </Route>
-            <Route exact path='/uploader'>
+            <Route path='/uploader'>
               <Uploader />
             </Route>
-            <Route exact path='/helper'>
+            <Route path='/helper'>
               <NeedHelpPage />
             </Route>
-            <Route exact path='/mynotes'>
+            <Route path='/mynotes'>
               <NotesApp />
             </Route>
             <Route component = { LandingPage } />
