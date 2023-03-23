@@ -122,12 +122,13 @@ li a:hover {
 
 
   .help-button{
+    text-decoration: none;
     background-color: #ebd461;
     display: flex;
     flex-direction: row;
     border: none;
     border-radius: 10px;
-    width: 250px;
+    width: 200px;
     align-items:center;
     height: 70px;
   }
@@ -140,10 +141,11 @@ li a:hover {
     margin-right: auto;
   }
 
-  nav  button:hover {
+  .help-button:hover {
     background-color: #ebd461d5;
     color: rgb(0, 0, 0);
     font-weight: bold;
+    text-underline-offset: 0;
   }
   
 

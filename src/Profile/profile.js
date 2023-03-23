@@ -39,12 +39,14 @@ export default function ProfileStatistics() {
         <span className='chatbot-span' onClick={ toggleChatbot }> Chatbot</span>
               { showChatbot && <Chatbot />}
       </li>
-      <li className='nav-center-4'>
-        <Link to='/helper'>
-            <span className='help-button-text'>Need Help ?</span>
-        </Link>
-        </li>
-    </ul>
+      </ul>
+      <div className='nav-right'>
+            <Link to='/helper'>
+              <button className='help-button'>
+                <span className='help-button-text'>Need Help ?</span>
+                </button>
+            </Link>
+            </div>
     </div>
            <div className='profile-div'>
             <MDBCard className="profile-card">

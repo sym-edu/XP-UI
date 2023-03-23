@@ -43,7 +43,7 @@ function App() {
             <Route path='/mynotes'>
               <NotesApp />
             </Route>
-            <Route component = { LandingPage } />
+            <Route component = { Login } />
           </Switch>
       </Router>
     </div>

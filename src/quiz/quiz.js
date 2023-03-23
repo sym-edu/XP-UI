@@ -147,12 +147,14 @@ export default function QuizComponent() {
             <span className='chatbot-span' onClick={ toggleChatbot }> Chatbot</span>
                   { showChatbot && <Chatbot />}
           </li>
-          <li className='nav-center-4'>
+		  </ul>
+          <div className='nav-right'>
             <Link to='/helper'>
+              <button className='help-button'>
                 <span className='help-button-text'>Need Help ?</span>
+                </button>
             </Link>
-            </li>
-        </ul>
+            </div>
         </div>
 		<div className='sidebar-quiz'>
 		<div className="courses-sidebar">

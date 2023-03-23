@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from './api/axios';
 import { Link } from 'react-router-dom';
 import './styles.css';
 import Image from '../img-imports/leftimg.jpg';
@@ -36,6 +35,9 @@ const [show, setShow] = useState(true);
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -45,51 +47,69 @@ const [show, setShow] = useState(true);
     }, [user])
 
     useEffect(() => {
-        setValidPwd(PWD_REGEX.test(pwd));
-        setValidMatch(pwd === matchPwd);
-    }, [pwd, matchPwd])
+        setValidPwd(PWD_REGEX.test(password));
+        setValidMatch(password === matchPwd);
+    }, [password, matchPwd])
 
     useEffect(() => {
         setErrMsg('');
-    }, [user, pwd, matchPwd])
+    }, [user, password, matchPwd])
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     // if button enabled with JS hack
+    //     const v1 = USER_REGEX.test(user);
+    //     const v2 = PWD_REGEX.test(pwd);
+    //     if (!v1 || !v2) {
+    //         setErrMsg("Invalid Entry");
+    //         return;
+    //     }
+    //     try {
+    //         const response = await axios.post(REGISTER_URL,
+    //             JSON.stringify({ user, pwd }),
+    //             {
+    //                 headers: { 'Content-Type': 'application/json' },
+    //                 withCredentials: true
+    //             }
+    //         );
+    //         // TODO: remove console.logs before deployment
+    //         console.log(JSON.stringify(response?.data));
+    //         //console.log(JSON.stringify(response))
+    //         setSuccess(true);
+    //         //clear state and controlled inputs
+    //         setUser('');
+    //         setPwd('');
+    //         setMatchPwd('');
+    //     } catch (err) {
+    //         if (!err?.response) {
+    //             setErrMsg('No Server Response');
+    //         } else if (err.response?.status === 409) {
+    //             setErrMsg('Username Taken');
+    //         } else {
+    //             setErrMsg('Registration Failed')
+    //         }
+    //         errRef.current.focus();
+    //     }
+    // }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // if button enabled with JS hack
-        const v1 = USER_REGEX.test(user);
-        const v2 = PWD_REGEX.test(pwd);
-        if (!v1 || !v2) {
-            setErrMsg("Invalid Entry");
-            return;
+        const response = await fetch('http://43.205.144.122:8000/authentication/register/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, password }),
+          credentials: 'include', // include cookies in the request
+        });
+        if (response.ok) {
+          // registration successful, redirect to home page
+          window.location.href = '/';
+        } else {
+          // registration failed, display error message
+          const data = await response.json();
+          console.log(data.error);
         }
-        try {
-            const response = await axios.post(REGISTER_URL,
-                JSON.stringify({ user, pwd }),
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
-                }
-            );
-            // TODO: remove console.logs before deployment
-            console.log(JSON.stringify(response?.data));
-            //console.log(JSON.stringify(response))
-            setSuccess(true);
-            //clear state and controlled inputs
-            setUser('');
-            setPwd('');
-            setMatchPwd('');
-        } catch (err) {
-            if (!err?.response) {
-                setErrMsg('No Server Response');
-            } else if (err.response?.status === 409) {
-                setErrMsg('Username Taken');
-            } else {
-                setErrMsg('Registration Failed')
-            }
-            errRef.current.focus();
-        }
-    }
-
+      };
     return (
         <>
             {success ? (
@@ -120,8 +140,8 @@ const [show, setShow] = useState(true);
                             id="username"
                             ref={userRef}
                             autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
+                            onChange={(e) => setUsername(e.target.value)}
+                            value={username} 
                             required
                             aria-invalid={validName ? "false" : "true"}
                             aria-describedby="uidnote"
@@ -144,8 +164,8 @@ const [show, setShow] = useState(true);
                         <input
                             type="password"
                             id="password"
-                            onChange={(e) => setPwd(e.target.value)}
-                            value={pwd}
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
                             required
                             aria-invalid={validPwd ? "false" : "true"}
                             aria-describedby="pwdnote"
@@ -181,13 +201,16 @@ const [show, setShow] = useState(true);
                             Must match the first password input field.
                         </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        {/* <button type="submit" disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button> */}
+
+                        <button type="submit">Sign Up</button>
+
                     </form>
                     <p>
                         Already registered?<br />
                         <span className="line">
-                            {/*put router link here*/}
-                            <a href="#"><Link to='/Login' onClick={handleShow}>Sign In</Link></a>
+                           <Link to='/Login' onClick={handleShow}>Sign In</Link>
+                            {/* <button type="submit">Register</button>  */}
                         </span>
                     </p>
                 </section>
