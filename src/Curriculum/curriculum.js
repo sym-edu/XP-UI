@@ -1,12 +1,12 @@
 import React , {useState} from "react";
 import "./curriculum.css";
 import {AiOutlineQuestionCircle} from 'react-icons/ai';
-import Logo from './img-imports/symlogo.jpeg';
+import Logo from '../img-imports/symlogo.jpeg';
 import { FaRegPlayCircle } from "react-icons/fa";
 import { FaPenAlt} from 'react-icons/fa';
 import { Link } from "react-router-dom";
-import videoFile from './img-imports/my-video.mp4'
-import Chatbot from './chatbot/chatbot.js';
+import videoFile from '../img-imports/my-video.mp4'
+import Chatbot from '../chatbot/chatbot.js';
 
 export function handleSidebarbuttonHover() {
   const progressBar = document.getElementById('ProgressBar');

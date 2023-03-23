@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './landingpage.css';
-import ybar from './img-imports/useme.png';
-import Logo from './img-imports/symlogo.jpeg';
+import ybar from '../img-imports/useme.png';
+import Logo from '../img-imports/symlogo.jpeg';
 import { FaRegPlayCircle } from 'react-icons/fa';
 import { SlNote } from 'react-icons/sl';
 import { FaPenAlt} from 'react-icons/fa';
@@ -19,7 +19,7 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { Link } from "react-router-dom";
-import Chatbot from './chatbot/chatbot.js';
+import Chatbot from '../chatbot/chatbot.js';
 
 
 

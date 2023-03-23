@@ -1,12 +1,12 @@
 import React from 'react';
-import Curriculum from './curriculum.js';
-import LandingPage from './landingpage.jsx';
+import Curriculum from './Curriculum/curriculum.js';
+import LandingPage from './LandingPage/landingpage.jsx';
 import { BrowserRouter as Router , Switch , Route } from "react-router-dom";
 import { Login } from './Login/Login.js';
 import Register from './Login/Register.js';
 import ProfileStatistics from './Profile/profile.js';
 import QuizComponent from './quiz/quiz.js';
-import Uploader from './uploading/uploader.js';
+import Uploader from './uploader/uploader.js';
 import NeedHelpPage from './help-section/helppage.js';
 import NotesApp from './mynotes/notesapp.js';
 
