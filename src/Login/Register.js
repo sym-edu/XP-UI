@@ -6,29 +6,26 @@ import './styles.css';
 import Image from '../img-imports/leftimg.jpg';
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = '/register';
+const Password_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
-const Register = () => {
+export const Register = () => {
 
-const [show, setShow] = useState(true);
+    const [show, setShow] = useState(true);
 
-  const handleShow = () => {
+    const handleShow = () => {
     setShow(false);
-  };
+    };
 
     const userRef = useRef();
     const errRef = useRef();
 
-    const [user, setUser] = useState('');
     const [validName, setValidName] = useState(false);
     const [userFocus, setUserFocus] = useState(false);
 
-    const [pwd, setPwd] = useState('');
-    const [validPwd, setValidPwd] = useState(false);
-    const [pwdFocus, setPwdFocus] = useState(false);
+    const [validPassword, setValidPassword] = useState(false);
+    const [passwordFocus, setPasswordFocus] = useState(false);
 
-    const [matchPwd, setMatchPwd] = useState('');
+    const [matchPassword, setMatchPassword] = useState('');
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
 
@@ -43,80 +40,57 @@ const [show, setShow] = useState(true);
     }, [])
 
     useEffect(() => {
-        setValidName(USER_REGEX.test(user));
-    }, [user])
+        setValidName(USER_REGEX.test(username));
+    }, [username])
 
     useEffect(() => {
-        setValidPwd(PWD_REGEX.test(password));
-        setValidMatch(password === matchPwd);
-    }, [password, matchPwd])
+        setValidPassword(Password_REGEX.test(password));
+        setValidMatch(password === matchPassword);
+    }, [password, matchPassword])
 
     useEffect(() => {
         setErrMsg('');
-    }, [user, password, matchPwd])
+    }, [username, password, matchPassword])
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     // if button enabled with JS hack
-    //     const v1 = USER_REGEX.test(user);
-    //     const v2 = PWD_REGEX.test(pwd);
-    //     if (!v1 || !v2) {
-    //         setErrMsg("Invalid Entry");
-    //         return;
-    //     }
-    //     try {
-    //         const response = await axios.post(REGISTER_URL,
-    //             JSON.stringify({ user, pwd }),
-    //             {
-    //                 headers: { 'Content-Type': 'application/json' },
-    //                 withCredentials: true
-    //             }
-    //         );
-    //         // TODO: remove console.logs before deployment
-    //         console.log(JSON.stringify(response?.data));
-    //         //console.log(JSON.stringify(response))
-    //         setSuccess(true);
-    //         //clear state and controlled inputs
-    //         setUser('');
-    //         setPwd('');
-    //         setMatchPwd('');
-    //     } catch (err) {
-    //         if (!err?.response) {
-    //             setErrMsg('No Server Response');
-    //         } else if (err.response?.status === 409) {
-    //             setErrMsg('Username Taken');
-    //         } else {
-    //             setErrMsg('Registration Failed')
-    //         }
-    //         errRef.current.focus();
-    //     }
-    // }
     const handleSubmit = async (e) => {
-        e.preventDefault();
+      e.preventDefault();
+      const v1 = USER_REGEX.test(username);
+      const v2 = Password_REGEX.test(password);
+      if (!v1 || !v2) {
+          setErrMsg("Invalid Entry");
+          return;
+      }
+      try {
         const response = await fetch('http://43.205.144.122:8000/authentication/register/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ username, password }),
-          credentials: 'include', // include cookies in the request
-        });
-        if (response.ok) {
-          // registration successful, redirect to home page
-          window.location.href = '/';
-        } else {
-          // registration failed, display error message
-          const data = await response.json();
-          console.log(data.error);
-        }
-      };
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password }),
+            credentials: 'include'
+          });
+          console.log(JSON.stringify(response?.data));
+        
+          setSuccess(true);
+          setUsername('');
+          setPassword('');
+          setMatchPassword('');
+      } catch (err) {
+          if (!err?.response) {
+              setErrMsg('No Server Response');
+          } else if (err.response?.status === 409) {
+              setErrMsg('Username Taken');
+          } else {
+              setErrMsg('Registration Failed')
+          }
+          errRef.current.focus();
+      }
+  }
     return (
         <>
             {success ? (
                 <section>
                     <h1>Success!</h1>
                     <p>
-                        <a href="#">Sign In</a>
+                        <a href="/login">Sign In</a>
                     </p>
                 </section>
             ) : (
@@ -133,7 +107,7 @@ const [show, setShow] = useState(true);
                         <label htmlFor="username">
                             Username:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
+                            <FontAwesomeIcon icon={faTimes} className={validName || !username ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="text"
@@ -148,7 +122,7 @@ const [show, setShow] = useState(true);
                             onFocus={() => setUserFocus(true)}
                             onBlur={() => setUserFocus(false)}
                         />
-                        <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
+                        <p id="uidnote" className={userFocus && username && !validName ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             4 to 24 characters.<br />
                             Must begin with a letter.<br />
@@ -158,8 +132,8 @@ const [show, setShow] = useState(true);
 
                         <label htmlFor="password">
                             Password:
-                            <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
+                            <FontAwesomeIcon icon={faCheck} className={validPassword ? "valid" : "hide"} />
+                            <FontAwesomeIcon icon={faTimes} className={validPassword || !password ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="password"
@@ -167,12 +141,12 @@ const [show, setShow] = useState(true);
                             onChange={(e) => setPassword(e.target.value)}
                             value={password}
                             required
-                            aria-invalid={validPwd ? "false" : "true"}
-                            aria-describedby="pwdnote"
-                            onFocus={() => setPwdFocus(true)}
-                            onBlur={() => setPwdFocus(false)}
+                            aria-invalid={validPassword ? "false" : "true"}
+                            aria-describedby="Passwordnote"
+                            onFocus={() => setPasswordFocus(true)}
+                            onBlur={() => setPasswordFocus(false)}
                         />
-                        <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
+                        <p id="Passwordnote" className={passwordFocus && !validPassword ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             8 to 24 characters.<br />
                             Must include uppercase and lowercase letters, a number and a special character.<br />
@@ -180,16 +154,16 @@ const [show, setShow] = useState(true);
                         </p>
 
 
-                        <label htmlFor="confirm_pwd">
+                        <label htmlFor="confirm_Password">
                             Confirm Password:
-                            <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
+                            <FontAwesomeIcon icon={faCheck} className={validMatch && matchPassword ? "valid" : "hide"} />
+                            <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPassword ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="password"
-                            id="confirm_pwd"
-                            onChange={(e) => setMatchPwd(e.target.value)}
-                            value={matchPwd}
+                            id="confirm_Password"
+                            onChange={(e) => setMatchPassword(e.target.value)}
+                            value={matchPassword}
                             required
                             aria-invalid={validMatch ? "false" : "true"}
                             aria-describedby="confirmnote"
@@ -201,7 +175,7 @@ const [show, setShow] = useState(true);
                             Must match the first password input field.
                         </p>
 
-                        {/* <button type="submit" disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button> */}
+                        {/* <button type="submit" disabled={!validName || !validPassword || !validMatch ? true : false}>Sign Up</button> */}
 
                         <button type="submit">Sign Up</button>
 
@@ -222,4 +196,3 @@ const [show, setShow] = useState(true);
     )
 }
 
-export default Register

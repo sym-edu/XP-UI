@@ -19,8 +19,8 @@ export const Login = () => {
   const userRef = useRef();
   const errRef = useRef();
   
-  const [user, setUser] = useState('');
-  const [pwd, setPwd] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [errMsg, setErrMsg] = useState('');
   const [success, setSuccess] = useState(false);
   
@@ -30,7 +30,7 @@ export const Login = () => {
   
   useEffect(() => {
     setErrMsg('');
-  }, [user, pwd]);
+  }, [username, password]);
   
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -78,16 +78,18 @@ export const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username: user, password: pwd }),
+        body: JSON.stringify({ username, password}),
       });
   
       if (response.ok) {
         const responseData = await response.json();
         console.log(JSON.stringify(responseData));
-        // setAuth(true);
-        window.location.href = '/';
-        setUser('');
-        setPwd('');
+        window.location.href = '/landingpage';
+        const accessToken = responseData?.accessToken;
+        const roles = responseData?.roles;
+        setAuth({ username, password , roles, accessToken });
+        setUsername('');
+        setPassword('');
         setSuccess(true);
       } else if (response.status === 400) {
         setErrMsg('Missing Username or Password');
@@ -131,8 +133,8 @@ export const Login = () => {
                             id="username"
                             ref={userRef}
                             autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
+                            onChange={(e) => setUsername(e.target.value)}
+                            value={username}
                             required
                         />
 
@@ -140,8 +142,8 @@ export const Login = () => {
                         <input
                             type="password"
                             id="password"
-                            onChange={(e) => setPwd(e.target.value)}
-                            value={pwd}
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
                             required
                         />
                         <button type = "submit">Sign In</button>

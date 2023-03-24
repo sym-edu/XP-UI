@@ -3,7 +3,7 @@ import Curriculum from './Curriculum/curriculum.js';
 import LandingPage from './LandingPage/landingpage.jsx';
 import { BrowserRouter as Router , Switch , Route } from "react-router-dom";
 import { Login } from './Login/Login.js';
-import Register from './Login/Register.js';
+import { Register } from './Login/Register.js';
 import ProfileStatistics from './Profile/profile.js';
 import QuizComponent from './quiz/quiz.js';
 import Uploader from './uploader/uploader.js';
