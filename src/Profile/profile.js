@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
 import './profile.css'; 
-import Logo from '../img-imports/symlogo.jpeg';
+import Logo from '../img-imports/SYM_Logo_Circle.svg';
 import {AiOutlineQuestionCircle} from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { TbRobot }  from 'react-icons/tb';

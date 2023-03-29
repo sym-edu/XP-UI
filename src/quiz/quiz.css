@@ -1,7 +1,7 @@
-  * {
+  /* * {
     font-family: "Cursive";
     color: black;
-  }
+  } */
   
   .quii {
     background-color: white;
@@ -197,7 +197,7 @@
       height:120px;
     }
     
-    nav  button:hover {
+    nav button:hover {
       background-color: #ebd461d5;
       color: rgb(0, 0, 0);
       font-weight: bold;

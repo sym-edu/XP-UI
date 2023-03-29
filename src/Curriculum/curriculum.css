@@ -98,7 +98,7 @@ font-size:1.6rem;
   margin-left:350px;
   }
 
-li{
+/* li{
     
     display: flex;
     align-self: right;
@@ -118,10 +118,10 @@ li a{
 
 li a:hover {
     border-bottom: 2px solid black;
-  }
+  } */
 
 
-  .help-button{
+  /* .help-button{
     text-decoration: none;
     background-color: #ebd461;
     display: flex;
@@ -146,7 +146,7 @@ li a:hover {
     color: rgb(0, 0, 0);
     font-weight: bold;
     text-underline-offset: 0;
-  }
+  } */
   
 
   .logo {

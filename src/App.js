@@ -17,8 +17,8 @@ function App() {
       <Router>
           <Switch>
             <Route exact path='/login'>
-          <Login />
-          </Route>
+                <Login />
+            </Route>
             <Route exact path='/register'>
                 <Register />
             </Route>
@@ -29,21 +29,21 @@ function App() {
                 <Curriculum />
             </Route>
             <Route path='/profile'>
-              <ProfileStatistics />
+                <ProfileStatistics />
             </Route>
             <Route exact path='/quiz'>
-              <QuizComponent />
+                <QuizComponent />
             </Route>
             <Route path='/uploader'>
-              <Uploader />
+                <Uploader />
             </Route>
             <Route path='/helper'>
-              <NeedHelpPage />
+                <NeedHelpPage />
             </Route>
             <Route path='/mynotes'>
-              <NotesApp />
+                <NotesApp />
             </Route>
-            <Route component = { Login } />
+            <Route component = { LandingPage } />
           </Switch>
       </Router>
     </div>

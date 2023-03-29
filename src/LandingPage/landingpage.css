@@ -9,7 +9,7 @@
     display: block;
 }
 
-.nav{
+/* .nav{
     display:flex;
     margin-left:3%;
     align-items:center;
@@ -57,7 +57,7 @@ margin-left:120px;
 
 .help-button span{
     font-size:1.8rem;
-}
+} */
 
 .content-btn{
     color:white;
@@ -193,7 +193,7 @@ canvas{
     margin-right: 10px;
 }
 
-.chatbot-span{
+/* .chatbot-span{
     font-size:2.0rem;
     cursor:pointer;
 }
@@ -201,7 +201,7 @@ canvas{
 .chatbot-span:hover{
     text-decoration: underline;
     text-underline-offset: 0.2em;
-}
+} */
 
 .sidebar-contentarea{
     display:flex;
@@ -214,6 +214,6 @@ canvas{
     font-weight:normal;
 }
 
-.nav-center{
+/* .nav-center{
     margin-left:15%;
-}
+} */

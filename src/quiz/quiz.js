@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import Logo from '../img-imports/symlogo.jpeg';
+// import Logo from '../img-imports/SYM_Logo_Circle.svg';
 import { Link } from "react-router-dom";
 import { TbRobot } from "react-icons/tb";
-import {AiOutlineQuestionCircle} from 'react-icons/ai';
+import { AiOutlineQuestionCircle } from 'react-icons/ai';
 import { FaRegPlayCircle } from "react-icons/fa";
-import { FaPenAlt} from 'react-icons/fa';
+import { FaPenAlt } from 'react-icons/fa';
 import "./quiz.css";
-import Chatbot from '../chatbot/chatbot.js'
+// import Chatbot from '../chatbot/chatbot.js'
+import Header from '../components/Header';
 
 export default function QuizComponent() {
 
-	const [showChatbot, setShowChatbot] = useState(false);
+	// const [showChatbot, setShowChatbot] = useState(false);
 
-	const toggleChatbot = () => {
-	  setShowChatbot(!showChatbot);
-	};
+	// const toggleChatbot = () => {
+	//   setShowChatbot(!showChatbot);
+	// };
 
 	const questions = [
 		{
@@ -84,7 +85,7 @@ export default function QuizComponent() {
 			questionText: 'Who was the first President of India?',
 			answerOptions: [
 				{ answerText: 'Ratatouille', isCorrect: false },
-				{ answerText: 'DR. B. R. Ambedkar', isCorrect: false},
+				{ answerText: 'DR. B. R. Ambedkar', isCorrect: false },
 				{ answerText: 'DR. Rajendra Prasad', isCorrect: true },
 				{ answerText: 'Wonder Women', isCorrect: false },
 			],
@@ -127,7 +128,7 @@ export default function QuizComponent() {
 	};
 	return (
 		<div className='quiz-container'>
-       <div className='nav'>
+			{/* <div className='nav'>
         <div className='nav-left'>
                   <img src={Logo} alt='sym-logo' className='nav-logo'/>
         <h3 className='nav-logo-h3'>Hello,Learner!</h3>
@@ -155,81 +156,82 @@ export default function QuizComponent() {
                 </button>
             </Link>
             </div>
-        </div>
-		<div className='sidebar-quiz'>
-		<div className="courses-sidebar">
-  <br/>
-  <br/>
-    <h2>
-        Curriculum
-    </h2>
-  <button className='sidebar-btn-1'>
-    <div className="button-text">
-      <span>1. Intro to Finance</span>
-      <FaRegPlayCircle/>
-      </div>
-      <progress id="ProgressBar" value="78" max="100" title=""></progress>
-  </button>
-  <button>
-    <div className="button-text">
-      <span>2. Stock and Investing</span>
-      <FaRegPlayCircle/>
-      </div>
-    <progress id="ProgressBar" value="78" max="100" title=""></progress>
-  </button>
-  <Link to='/quiz'>
-  <button>
-    <div className="button-text">
-      <span>3. Quiz 1</span>
-      <FaPenAlt/>
-      </div>
-    <progress id="ProgressBar" value="78" max="100" title=""></progress>
-    </button>
-    </Link>
-  <button>
-    <div className="button-text">
-      <span>4. Financing</span> 
-      <FaRegPlayCircle/>
-    </div>
-    <progress id="ProgressBar" value="78" max="100" title=""></progress>
-  </button>
-  <button>
-    <div className="button-text">
-      <span>5. Banking</span>
-      <FaRegPlayCircle/>
-    </div>
-    <progress id="ProgressBar" value="78" max="100" title=""></progress>
-  </button>
-  <button>
-    <div className="button-text">
-      <span>6. Quiz 2</span>
-      <FaPenAlt/>
-      </div>
-    <progress id="ProgressBar" value="78" max="100" title=""></progress>
-  </button>
-</div>
-		<div className='quii'>
-			{showScore ? (
-				<div className='score-section'>
-					You scored {score} out of {questions.length}
-				</div>
-			) : (
-				<>
-					<div className='question-section'>
-						<div className='question-count'>
-							<span>Question {currentQuestion + 1}</span>/{questions.length}
+        </div> */}
+			<Header />
+			<div className='sidebar-quiz'>
+				<div className="courses-sidebar">
+					<br />
+					<br />
+					<h2>
+						Curriculum
+					</h2>
+					<button className='sidebar-btn-1'>
+						<div className="button-text">
+							<span>1. Intro to Finance</span>
+							<FaRegPlayCircle />
 						</div>
-						<div className='question-text'>{questions[currentQuestion].questionText}</div>
-					</div>
-					<div className='answer-section'>
-						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-						))}
-					</div>
-				</>
-			)}
-		</div>
-		</div>
+						<progress id="ProgressBar" value="78" max="100" title=""></progress>
+					</button>
+					<button>
+						<div className="button-text">
+							<span>2. Stock and Investing</span>
+							<FaRegPlayCircle />
+						</div>
+						<progress id="ProgressBar" value="78" max="100" title=""></progress>
+					</button>
+					<Link to='/quiz'>
+						<button>
+							<div className="button-text">
+								<span>3. Quiz 1</span>
+								<FaPenAlt />
+							</div>
+							<progress id="ProgressBar" value="78" max="100" title=""></progress>
+						</button>
+					</Link>
+					<button>
+						<div className="button-text">
+							<span>4. Financing</span>
+							<FaRegPlayCircle />
+						</div>
+						<progress id="ProgressBar" value="78" max="100" title=""></progress>
+					</button>
+					<button>
+						<div className="button-text">
+							<span>5. Banking</span>
+							<FaRegPlayCircle />
+						</div>
+						<progress id="ProgressBar" value="78" max="100" title=""></progress>
+					</button>
+					<button>
+						<div className="button-text">
+							<span>6. Quiz 2</span>
+							<FaPenAlt />
+						</div>
+						<progress id="ProgressBar" value="78" max="100" title=""></progress>
+					</button>
+				</div>
+				<div className='quii'>
+					{showScore ? (
+						<div className='score-section'>
+							You scored {score} out of {questions.length}
+						</div>
+					) : (
+						<>
+							<div className='question-section'>
+								<div className='question-count'>
+									<span>Question {currentQuestion + 1}</span>/{questions.length}
+								</div>
+								<div className='question-text'>{questions[currentQuestion].questionText}</div>
+							</div>
+							<div className='answer-section'>
+								{questions[currentQuestion].answerOptions.map((answerOption) => (
+									<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+								))}
+							</div>
+						</>
+					)}
+				</div>
+			</div>
 		</div>
 	);
 }
