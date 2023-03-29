@@ -5,8 +5,8 @@
   text-decoration: none;
 }
 
-.content {
-  width: 80%; /* set the width of the main content area */
+.curriculum-content {
+  width: 100%; /* set the width of the main content area */
   padding: 20px; /* add padding to the content area */
 }
 
@@ -29,6 +29,54 @@ overflow: visible;
 
 .sidebar-btn-img{
   margin-left: 50px;
+}
+
+.sidebar-button-icon {
+  margin-top: 8px;
+}
+
+.courses-sidebar {
+  float: left;
+  border-right: 2px solid black;
+  width: 20%;
+  margin-left: 20px;
+  margin-right: 0px;
+  height: 100vh;
+}
+
+.courses-sidebar:border-right {
+  height: 200%;
+}
+
+.courses-sidebar span {
+  font-size: 1.6rem;
+}
+
+.courses-sidebar h2 {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.courses-sidebar button {
+  display: flex;
+  flex-direction: column;
+  background-color: #ebd461;
+  margin-bottom: 40px;
+  height: 70px;
+  width: 90%;
+  border: none;
+}
+
+.courses-sidebar button progress {
+  margin-top: 2px;
+  /* margin-left: 5px; */
+  height: 20px;
+}
+
+.courses-sidebar button span {
+  font-size: 1.5rem;
+  /* margin-left: 30px; */
+  margin-right: 15px;
 }
 
 .button-text{

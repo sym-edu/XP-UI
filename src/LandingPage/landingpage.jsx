@@ -58,7 +58,7 @@ export default function LandingPage() {
   //   fetchData();
   // }, []);
 
-  
+
 
   const options = {
     responsive: true,
@@ -118,13 +118,15 @@ export default function LandingPage() {
           <br />
           <br />
           <h2>My Courses</h2>
-          <button id='courses-btn' onMouseOver={handleSidebarbuttonHover} className='courses-btn'>
-            <div className='btn-icon-1'>
-              <span className='fl'>FL-101</span>
-              <FaRegPlayCircle className='sidebar-button-icon' />
-            </div>
-            <progress id="ProgressBar" value="78" max="100" title=""></progress>
-          </button>
+          <Link to='/curriculum'>
+            <button id='courses-btn' onMouseOver={handleSidebarbuttonHover} className='courses-btn'>
+              <div className='btn-icon-1'>
+                <span className='fl'>CL-101</span>
+                <FaRegPlayCircle className='sidebar-button-icon' />
+              </div>
+              <progress id="ProgressBar" value="78" max="100" title=""></progress>
+            </button>
+          </Link>
           <button id='courses-btn' onMouseOver={handleSidebarbuttonHover} className='courses-btn'>
             <div className='btn-icon-2'>
               <span className='myc'>My Courses</span>
@@ -148,27 +150,29 @@ export default function LandingPage() {
           </Link>
         </div>
         <div className="content-area">
-          <button className='content-btn' id="btn">
-            <div className="content-btn-content">
-              <span style={{ color: 'white' }}>Continue Your Learning</span>
-              <Link to='/curriculum'><span style={{ color: 'white' }}>STOCKS AND INVESTING</span></Link>
-              <FaRegPlayCircle size={32} />
-            </div>
-          </button>
-          <      div className="below-content-button">
+          <Link to='/curriculum'>
+            <button className='content-btn' id="btn">
+              <div className="content-btn-content">
+                <span style={{ color: 'white' }}>Continue Your Learning</span>
+                <span style={{ color: 'white' }}>INTRO TO GOVERNANCE</span>
+                <FaRegPlayCircle size={32} />
+              </div>
+            </button>
+          </Link>
+          <div className="below-content-button">
             <div className="stats">
               <h3 className='stats-title'>My Stats</h3>
               <br />
               <div className="att">
-                <h3>Attendance</h3>
+                <h4>Attendance</h4>
                 <img className='my-image' src={ybar} alt="attendance" />
               </div>
               <div className="scr">
-                <h3>Assignment Score</h3>
+                <h4>Assignment Score</h4>
                 <img className='my-image' src={ybar} alt="assScore" />
               </div>
               <div className="ovp">
-                <h3>Overall Progress</h3>
+                <h4>Overall Progress</h4>
                 <img className='my-image' src={ybar} alt="ovProgress" />
               </div>
             </div>

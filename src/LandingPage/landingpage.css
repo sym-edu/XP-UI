@@ -1,11 +1,11 @@
-*{
-    margin:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
 
-.maincontainer{
+.maincontainer {
     display: block;
 }
 
@@ -59,139 +59,141 @@ margin-left:120px;
     font-size:1.8rem;
 } */
 
-.content-btn{
-    color:white;
+.content-btn {
+    color: white;
     background-color: #1E4A5D;
-    display:flex;
+    display: flex;
     flex-direction: row;
-    width:90%;
+    width: 90%;
     align-items: center;
-    height:70px;
-    margin-left:20px;
+    height: 70px;
+    margin-left: 20px;
 }
 
-.content-btn-content{
-    width:100%;
-    display:flex;
+.content-btn-content {
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.content-area{
-    float:left;
-    width:75%;
-    display:flex;
-    flex-direction: column;
-    height:80%;
-}
-
-.courses-sidebar:border-right{
-    height:200%;
-}
-
-.below-content-button{
-    width:80%;
-    margin-left:5%;
+.content-area {
+    float: left;
+    width: 75%;
     display: flex;
-    height:100%;
+    flex-direction: column;
+    height: 80%;
 }
 
-.stats{
-    height:400px;
+.courses-sidebar:border-right {
+    height: 200%;
+}
+
+.below-content-button {
+    width: 80%;
+    margin-left: 5%;
+    display: flex;
+    height: 100%;
+}
+
+.stats {
+    height: 400px;
     font-size: 1.7rem;
 }
 
-.stats-title{
-    margin-left:25px;
+.stats-title {
+    margin-left: 25px;
     margin-top: 12px;
 }
 
-.my-image{
-    height:60px;
-    width:60px;
-    margin-left:8px;
+.my-image {
+    height: 60px;
+    width: 60px;
+    margin-left: 8px;
 }
 
-.my-image-2{
-    height:60px;
-    width:60px;
-    margin-left:3px;
+.my-image-2 {
+    height: 60px;
+    width: 60px;
+    margin-left: 3px;
 }
 
-.att,.scr,.ovp{
-    display:flex;
-    margin-bottom:30px;
-    align-items:center;
+.att,
+.scr,
+.ovp {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
 }
 
-.courses-sidebar{
-    float:left;
-    border-right:2px solid black;
-    width:20%;
-    margin-left:20px;
-    margin-right:0px;
-    height:100vh;
+.courses-sidebar {
+    float: left;
+    border-right: 2px solid black;
+    width: 20%;
+    margin-left: 20px;
+    margin-right: 0px;
+    height: 100vh;
 }
 
-.courses-sidebar span{
-    font-size:1.6rem;
+.courses-sidebar span {
+    font-size: 1.6rem;
 }
 
-.courses-sidebar h2{
-    margin-left:60px;
-    margin-bottom:30px;
+.courses-sidebar h2 {
+    margin-left: 60px;
+    margin-bottom: 30px;
 }
 
-.courses-sidebar button{
-    display:flex;
+.courses-sidebar button {
+    display: flex;
     flex-direction: column;
     background-color: #ebd461;
-   margin-bottom: 40px; 
-   height:70px;
-   width:90%;  
-   border:none;
+    margin-bottom: 40px;
+    height: 70px;
+    width: 90%;
+    border: none;
 }
 
-.courses-sidebar button progress{
+.courses-sidebar button progress {
     margin-top: 2px;
-    margin-left:5px;
-    height:20px;
-}
-  
-.courses-sidebar button span{
-    font-size:1.5rem;
-    margin-left: 30px;
-    margin-right:15px;
+    /* margin-left: 5px; */
+    height: 20px;
 }
 
-.courses-btn-4{
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction: row;
+.courses-sidebar button span {
+    font-size: 1.5rem;
+    /* margin-left: 30px; */
+    margin-right: 15px;
 }
 
-canvas{
-    margin-left:100px;
-    height:400px;
-    max-width:700px;
+.courses-btn-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
-.btn-icon-1{
+canvas {
+    margin-left: 50px;
+    height: 320px;
+    /* max-width: 700px; */
+}
+
+/* .btn-icon-1{
     margin-left:37px ;
 }
 
 .btn-icon-2{
     margin-left:20px;
+} */
+
+.sidebar-button-icon {
+    margin-top: 8px;
 }
 
-.sidebar-button-icon{
-    margin-top:8px;
-}
-
-.courses-btn{
+/* .courses-btn{
     margin-right: 10px;
-}
+} */
 
 /* .chatbot-span{
     font-size:2.0rem;
@@ -203,15 +205,15 @@ canvas{
     text-underline-offset: 0.2em;
 } */
 
-.sidebar-contentarea{
-    display:flex;
+.sidebar-contentarea {
+    display: flex;
     flex-direction: row;
 }
 
-.help-button-text{
+.help-button-text {
     justify-content: flex-end;
-    font-size:1.8rem;
-    font-weight:normal;
+    font-size: 1.8rem;
+    font-weight: normal;
 }
 
 /* .nav-center{

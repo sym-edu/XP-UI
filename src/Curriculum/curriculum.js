@@ -5,7 +5,7 @@ import Logo from '../img-imports/SYM_Logo_Circle.svg';
 import { FaRegPlayCircle } from "react-icons/fa";
 import { FaPenAlt } from 'react-icons/fa';
 import { Link } from "react-router-dom";
-import videoFile from '../img-imports/my-video.mp4'
+import videoFile from '../img-imports/Intro-Governance.mp4'
 import Chatbot from '../chatbot/chatbot.js';
 import Header from "../components/Header";
 
@@ -64,15 +64,15 @@ export default function Curriculum() {
           </h2>
           <button onClick={handleSidebarbuttonHover} className='courses-btn'>
             <div className="button-text">
-              <span>1. Intro to Finance</span>
-              <FaRegPlayCircle />
+              <span>1. Intro to ...</span>
+              <FaRegPlayCircle className='sidebar-button-icon' />
             </div>
             <progress id="ProgressBar" value="78" max="100" title=""></progress>
           </button>
           <button onClick={handleSidebarbuttonHover} className='courses-btn'>
             <div className="button-text">
-              <span>2. Stock and Investing</span>
-              <FaRegPlayCircle />
+              <span>2. Voting</span>
+              <FaRegPlayCircle className='sidebar-button-icon' />
             </div>
             <progress id="ProgressBar" value="78" max="100" title=""></progress>
           </button>
@@ -80,34 +80,34 @@ export default function Curriculum() {
             <button onClick={handleSidebarbuttonHover} className='courses-btn'>
               <div className="button-text">
                 <span>3. Quiz 1</span>
-                <FaPenAlt />
+                <FaPenAlt className='sidebar-button-icon' />
               </div>
               <progress id="ProgressBar" value="78" max="100" title=""></progress>
             </button>
           </Link>
           <button onClick={handleSidebarbuttonHover} className='courses-btn'>
             <div className="button-text">
-              <span>4. Financing</span>
-              <FaRegPlayCircle />
+              <span>4. Bills</span>
+              <FaRegPlayCircle className='sidebar-button-icon' />
             </div>
             <progress id="ProgressBar" value="78" max="100" title=""></progress>
           </button>
           <button onClick={handleSidebarbuttonHover} className='courses-btn'>
             <div className="button-text">
-              <span>5. Banking</span>
-              <FaRegPlayCircle />
+              <span>5. Assembly</span>
+              <FaRegPlayCircle className='sidebar-button-icon' />
             </div>
             <progress id="ProgressBar" value="78" max="100" title=""></progress>
           </button>
           <button onClick={handleSidebarbuttonHover} className='courses-btn'>
             <div className="button-text">
               <span>6. Quiz 2</span>
-              <FaPenAlt />
+              <FaPenAlt className='sidebar-button-icon' />
             </div>
             <progress id="ProgressBar" value="78" max="100" title=""></progress>
           </button>
         </div>
-        <div className="content">
+        <div className="curriculum-content">
           <video src={videoFile} controls />
         </div>
       </div>

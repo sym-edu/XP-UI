@@ -19,93 +19,93 @@ export default function QuizComponent() {
 
 	const questions = [
 		{
-			questionText: 'What is the capital of France?',
+			questionText: 'The Prime Minister is elected by members of?',
 			answerOptions: [
-				{ answerText: 'New York', isCorrect: false },
-				{ answerText: 'London', isCorrect: false },
-				{ answerText: 'Paris', isCorrect: true },
-				{ answerText: 'Dublin', isCorrect: false },
+				{ answerText: 'Assembly', isCorrect: false },
+				{ answerText: 'Panchayat', isCorrect: false },
+				{ answerText: 'Lok Sabha', isCorrect: true },
+				{ answerText: 'Rajya Sabha', isCorrect: false },
 			],
 		},
 		{
-			questionText: 'Who is CEO of Tesla?',
+			questionText: 'Who appoints Cabinet Ministers?',
 			answerOptions: [
-				{ answerText: 'Jeff Bezos', isCorrect: false },
-				{ answerText: 'Elon Musk', isCorrect: true },
-				{ answerText: 'Bill Gates', isCorrect: false },
-				{ answerText: 'Tony Stark', isCorrect: false },
+				{ answerText: 'The Prime Minister', isCorrect: true },
+				{ answerText: 'The President', isCorrect: false },
+				{ answerText: 'Speaker of Lok Sabha', isCorrect: false },
+				{ answerText: 'Speaker of Rajya Sabha', isCorrect: false },
 			],
 		},
 		{
-			questionText: 'The iPhone was created by which company?',
+			questionText: 'Regulation of education comes under which Ministry?',
 			answerOptions: [
-				{ answerText: 'Apple', isCorrect: true },
-				{ answerText: 'Intel', isCorrect: false },
-				{ answerText: 'Amazon', isCorrect: false },
-				{ answerText: 'Microsoft', isCorrect: false },
+				{ answerText: 'Human Resource Development', isCorrect: true },
+				{ answerText: 'Information & Broadcasting', isCorrect: false },
+				{ answerText: 'Education', isCorrect: false },
+				{ answerText: 'Niti Aayog', isCorrect: false },
 			],
 		},
 		{
-			questionText: 'How many Harry Potter books are there?',
+			questionText: 'Who presents the national budget?',
 			answerOptions: [
-				{ answerText: '1', isCorrect: false },
-				{ answerText: '4', isCorrect: false },
-				{ answerText: '6', isCorrect: false },
-				{ answerText: '7', isCorrect: true },
-			],
-		},
-		{
-			questionText: 'Who was the first man to land on Moon?',
-			answerOptions: [
-				{ answerText: 'Neil Armstrong', isCorrect: true },
-				{ answerText: 'Abraham Lincoln', isCorrect: false },
-				{ answerText: 'Jeff Bezos', isCorrect: false },
-				{ answerText: 'Tony Stark', isCorrect: false },
-			],
-		},
-		{
-			questionText: 'Who invented the Helicopter',
-			answerOptions: [
-				{ answerText: 'Manvendra Singh', isCorrect: false },
-				{ answerText: 'Igor Sikorsky', isCorrect: true },
-				{ answerText: 'Brad Pitt', isCorrect: false },
-				{ answerText: 'Hada', isCorrect: false },
-			],
-		},
-		{
-			questionText: 'What is the PH value of the human body?',
-			answerOptions: [
-				{ answerText: '9.2 tp 9.8', isCorrect: false },
-				{ answerText: '7.0 to 7.8', isCorrect: true },
-				{ answerText: '6.1 to 6.3', isCorrect: false },
-				{ answerText: '5.4 to 5.6', isCorrect: false },
+				{ answerText: 'The Governor of RBI', isCorrect: false },
+				{ answerText: 'The Commerce Minister', isCorrect: false },
+				{ answerText: 'The Prime Minister', isCorrect: false },
+				{ answerText: 'The Finance Minister', isCorrect: true },
 			],
 		},
 		{
 			questionText: 'Who was the first President of India?',
 			answerOptions: [
-				{ answerText: 'Ratatouille', isCorrect: false },
-				{ answerText: 'DR. B. R. Ambedkar', isCorrect: false },
-				{ answerText: 'DR. Rajendra Prasad', isCorrect: true },
-				{ answerText: 'Wonder Women', isCorrect: false },
+				{ answerText: 'Pandit Jawaharlal Nehru', isCorrect: false },
+				{ answerText: 'Dr. B. R. Ambedkar', isCorrect: false },
+				{ answerText: 'Dr. Rajendra Prasad', isCorrect: true },
+				{ answerText: 'M.K. Gandhi', isCorrect: false },
 			],
 		},
 		{
-			questionText: 'Who is the richest man in the world?',
+			questionText: 'Who is the head of a state legislative assembly?',
 			answerOptions: [
-				{ answerText: 'Bernard Arnault & family', isCorrect: true },
-				{ answerText: 'Bill Gates', isCorrect: false },
-				{ answerText: 'Tony Stark', isCorrect: false },
-				{ answerText: 'Elon Musk', isCorrect: false },
+				{ answerText: 'The Governor', isCorrect: false },
+				{ answerText: 'The Chief Minister', isCorrect: true },
+				{ answerText: 'Both', isCorrect: false },
+				{ answerText: 'Neither', isCorrect: false },
 			],
 		},
 		{
-			questionText: 'Which color is formed when you mix black and white?',
+			questionText: 'Who is in charge of law and order in a state?',
 			answerOptions: [
-				{ answerText: 'Green', isCorrect: false },
-				{ answerText: 'Black', isCorrect: false },
-				{ answerText: 'White', isCorrect: false },
-				{ answerText: 'Grey', isCorrect: true },
+				{ answerText: 'The Union Government', isCorrect: false },
+				{ answerText: 'The State Government', isCorrect: true },
+				{ answerText: 'The Legislative Council', isCorrect: false },
+				{ answerText: 'The High Court', isCorrect: false },
+			],
+		},
+		{
+			questionText: 'Who is the current Chief Minister of Tamil Nadu?',
+			answerOptions: [
+				{ answerText: 'Edappadi Palanisamy', isCorrect: false },
+				{ answerText: 'O. Paneerselvam', isCorrect: false },
+				{ answerText: 'M.K. Stalin', isCorrect: true },
+				{ answerText: 'J. Jayalalitha', isCorrect: false },
+			],
+		},
+		{
+			questionText: 'Who is in charge of providing clean water?',
+			answerOptions: [
+				{ answerText: 'Corporation', isCorrect: true },
+				{ answerText: 'State Government', isCorrect: false },
+				{ answerText: 'State Assembly', isCorrect: false },
+				{ answerText: 'Union Government', isCorrect: false },
+			],
+		},
+		{
+			questionText: 'Who builds roads in rural areas?',
+			answerOptions: [
+				{ answerText: 'Union Government', isCorrect: false },
+				{ answerText: 'State Government', isCorrect: false },
+				{ answerText: 'The Corporation', isCorrect: false },
+				{ answerText: 'The Panchayat', isCorrect: true },
 			],
 		},
 	];
@@ -167,14 +167,14 @@ export default function QuizComponent() {
 					</h2>
 					<button className='sidebar-btn-1'>
 						<div className="button-text">
-							<span>1. Intro to Finance</span>
+							<span>1. Intro to ...</span>
 							<FaRegPlayCircle />
 						</div>
 						<progress id="ProgressBar" value="78" max="100" title=""></progress>
 					</button>
 					<button>
 						<div className="button-text">
-							<span>2. Stock and Investing</span>
+							<span>2. Voting</span>
 							<FaRegPlayCircle />
 						</div>
 						<progress id="ProgressBar" value="78" max="100" title=""></progress>
@@ -190,14 +190,14 @@ export default function QuizComponent() {
 					</Link>
 					<button>
 						<div className="button-text">
-							<span>4. Financing</span>
+							<span>4. Bills</span>
 							<FaRegPlayCircle />
 						</div>
 						<progress id="ProgressBar" value="78" max="100" title=""></progress>
 					</button>
 					<button>
 						<div className="button-text">
-							<span>5. Banking</span>
+							<span>5. Assembly</span>
 							<FaRegPlayCircle />
 						</div>
 						<progress id="ProgressBar" value="78" max="100" title=""></progress>
