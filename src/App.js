@@ -4,7 +4,8 @@ import LandingPage from './LandingPage/landingpage.jsx';
 import { BrowserRouter as Router , Switch , Route } from "react-router-dom";
 import { Login } from './Login/Login.js';
 import { Register } from './Login/Register.js';
-import ProfileStatistics from './Profile/profile.js';
+import Profile from './Profile/profilenew.js';
+// import ProfileStatistics from './Profile/profile.js';
 import QuizComponent from './quiz/quiz.js';
 import Uploader from './uploader/uploader.js';
 import NeedHelpPage from './help-section/helppage.js';
@@ -29,7 +30,8 @@ function App() {
                 <Curriculum />
             </Route>
             <Route path='/profile'>
-                <ProfileStatistics />
+                <Profile />
+                {/* <ProfileStatistics /> */}
             </Route>
             <Route exact path='/quiz'>
                 <QuizComponent />
