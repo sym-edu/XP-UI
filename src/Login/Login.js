@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 import Image from '../img-imports/leftimg.jpg';
 
-const LOGIN_URL = 'http://43.205.144.122:8000/authentication/login/';
+const LOGIN_URL = 'https://dev-xp-api.speakyourmindeducation.com/authentication/login/';
 
 export const Login = () => {
 

@@ -61,7 +61,7 @@ export const Register = () => {
           return;
       }
       try {
-        const response = await fetch('http://43.205.144.122:8000/authentication/register/', {
+        const response = await fetch('https://dev-xp-api.speakyourmindeducation.com/authentication/register/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password }),
