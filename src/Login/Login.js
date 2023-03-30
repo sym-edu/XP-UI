@@ -84,7 +84,7 @@ export const Login = () => {
       if (response.ok) {
         const responseData = await response.json();
         console.log(JSON.stringify(responseData));
-        window.location.href = '/landingpage';
+        window.location.href = '/dash';
         const accessToken = responseData?.accessToken;
         const roles = responseData?.roles;
         setAuth({ username, password , roles, accessToken });
@@ -113,7 +113,7 @@ export const Login = () => {
                     <h1>You are logged in!</h1>
                     <br />
                     <p>
-                        <a href="#"><Link to='/landingpage'>Go to Home</Link></a>
+                        <a href="#"><Link to='/dash'>Go to Home</Link></a>
                     </p>
                 </section>
             ) : (

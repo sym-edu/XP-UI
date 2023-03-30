@@ -23,7 +23,7 @@ function App() {
             <Route exact path='/register'>
                 <Register />
             </Route>
-            <Route exact path='/landingpage'>
+            <Route exact path='/dash'>
                 <LandingPage />
             </Route>
             <Route exact path='/curriculum'>
@@ -45,7 +45,7 @@ function App() {
             <Route path='/mynotes'>
                 <NotesApp />
             </Route>
-            <Route component = { LandingPage } />
+            <Route component = { Login } />
           </Switch>
       </Router>
     </div>
