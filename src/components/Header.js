@@ -22,7 +22,7 @@ export default function Header() {
                 <li className='header-nav-center-1'>
                     <NavLink 
                         activeStyle={{ borderBottom: '2px solid black', fontWeight: 'bold' }} 
-                        exact to="/">
+                        exact to="/dash">
                             My Dashboard
                     </NavLink>
                 </li>

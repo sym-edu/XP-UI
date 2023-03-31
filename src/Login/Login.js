@@ -101,7 +101,7 @@ export const Login = () => {
       errRef.current.focus();
     } catch (err) {
       console.log(err);
-      setErrMsg('No Server Response');
+      // setErrMsg('No Server Response');
       errRef.current.focus();
     }
   };
