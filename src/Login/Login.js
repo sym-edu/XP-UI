@@ -81,7 +81,11 @@ export const Login = () => {
 //         },
 //         body: JSON.stringify({ username, password}),
 //       });
+      window.location.href = '/dash';
+      setSuccess(true);
       throw new Error("Temporarily disabling backend verification");
+      const response = 'False';
+//       Temporarily disabling backend verification...
   
       if (response.ok) {
         const responseData = await response.json();
