@@ -73,13 +73,15 @@ export const Login = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch(LOGIN_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password}),
-      });
+//       Temporarily disabling backend verification...
+//       const response = await fetch(LOGIN_URL, {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ username, password}),
+//       });
+      throw new Error("Temporarily disabling backend verification");
   
       if (response.ok) {
         const responseData = await response.json();
